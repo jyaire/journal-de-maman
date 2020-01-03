@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Journaux{% endblock %}
+
+{% block body %}
+    <h1>Journaux</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ journaux.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ journaux.titre }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{{ journaux.datedebut ? journaux.datedebut|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{{ journaux.datefin ? journaux.datefin|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('journaux_index') }}">back to list</a>
+
+    <a href="{{ path('journaux_edit', {'id': journaux.id}) }}">edit</a>
+
+    {{ include('journaux/_delete_form.html.twig') }}
+{% endblock %}

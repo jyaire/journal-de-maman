@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Journaux{% endblock %}
+
+{% block body %}
+    <h1>Create new Journaux</h1>
+
+    {{ include('journaux/_form.html.twig') }}
+
+    <a href="{{ path('journaux_index') }}">back to list</a>
+{% endblock %}
