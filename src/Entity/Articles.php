@@ -35,14 +35,9 @@ class Articles
     private $journal;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="articles")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="articles")
      */
     private $auteur;
-
-    public function __construct()
-    {
-        $this->auteur = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -85,33 +80,14 @@ class Articles
         return $this;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getAuteur(): Collection
+    public function getAuteur(): ?User
     {
         return $this->auteur;
     }
 
-    public function addAuteur(User $auteur): self
+    public function setAuteur(?User $auteur): self
     {
-        if (!$this->auteur->contains($auteur)) {
-            $this->auteur[] = $auteur;
-            $auteur->setArticles($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAuteur(User $auteur): self
-    {
-        if ($this->auteur->contains($auteur)) {
-            $this->auteur->removeElement($auteur);
-            // set the owning side to null (unless already changed)
-            if ($auteur->getArticles() === $this) {
-                $auteur->setArticles(null);
-            }
-        }
+        $this->auteur = $auteur;
 
         return $this;
     }
