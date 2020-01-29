@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54d29ddc-da02-4967-90ca-d583ff534e23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +45,18 @@
         <item name="journaldemaman@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
     <select />
@@ -218,6 +229,10 @@
       <workItem from="1578054608865" duration="669000" />
       <workItem from="1578055279766" duration="4593000" />
       <workItem from="1578940906995" duration="2005000" />
+      <workItem from="1578989526502" duration="54000" />
+      <workItem from="1579264732369" duration="3791000" />
+      <workItem from="1580237572831" duration="2188000" />
+      <workItem from="1580286006648" duration="5579000" />
     </task>
     <servers />
   </component>
@@ -233,6 +248,27 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="466" y="134" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.700@0.27.1366.700" timestamp="1578055275147" />
+    <state width="903" height="138" key="GridCell.Tab.0.bottom" timestamp="1580237602240">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="903" height="138" key="GridCell.Tab.0.bottom/0.27.1366.700@0.27.1366.700" timestamp="1580237602240" />
+    <state width="903" height="138" key="GridCell.Tab.0.center" timestamp="1580237602239">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="903" height="138" key="GridCell.Tab.0.center/0.27.1366.700@0.27.1366.700" timestamp="1580237602239" />
+    <state width="903" height="138" key="GridCell.Tab.0.left" timestamp="1580237602238">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="903" height="138" key="GridCell.Tab.0.left/0.27.1366.700@0.27.1366.700" timestamp="1580237602238" />
+    <state width="903" height="138" key="GridCell.Tab.0.right" timestamp="1580237602240">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state width="903" height="138" key="GridCell.Tab.0.right/0.27.1366.700@0.27.1366.700" timestamp="1580237602239" />
+    <state x="749" y="544" key="com.intellij.ide.util.TipDialog" timestamp="1580286293145">
+      <screen x="0" y="424" width="1440" height="476" />
+    </state>
+    <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
+    <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@0.424.1440.476" timestamp="1580286293145" />
     <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1578057855518">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
