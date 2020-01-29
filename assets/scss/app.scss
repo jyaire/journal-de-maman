@@ -19,3 +19,23 @@ body {
     font-family: 'Caveat', Arial sans-serif;
     font-size: x-large;
 }
+
+/* EPHEMERIDE */
+
+.ephemeride {
+    font-family: 'Bebas Neue', Arial sans-serif;
+    text-align: center;
+    text-decoration: none;
+}
+
+.jour-rouge {
+    font-family: 'Bebas Neue', Arial sans-serif;
+    color: red;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.shadow-date {
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}

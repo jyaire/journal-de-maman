@@ -3,7 +3,7 @@
 {% block title %}{{ journaux.titre }}{% endblock %}
 
 {% block body %}
-    <main class="index">
+    <main class="journal">
         <h1 class="p-3">{{ journaux.titre }}</h1>
         <div class="container">
             <div class="row">
@@ -14,6 +14,17 @@
                     </p>
                 </div>
             </div>
+            <a href="{{ path('articles_show', {id: 1}) }}" class="ephemeride">
+                <div class="card-deck" style="width: 150px;">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title text-center">LUNDI</div>
+                            <div class="jour-rouge">{{ journaux.datedebut ? journaux.datedebut|date('d') : '' }}</div>
+                            <div class="card-title text-center">JANVIER</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
     </main>
 

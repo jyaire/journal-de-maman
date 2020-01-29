@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Caveat|Permanent+Marker&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Caveat|Permanent+Marker|Bebas+Neue&display=swap"
+              rel="stylesheet">
         <title>{% block title %}Le journal de Maman{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -19,7 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
                         <a href="{{ path('journaux_index') }}" class="pl-5 nav-item nav-link active">Journaux</a>
-                        <a href="{{ path('articles_show_random') }}" class="pl-5 nav-item nav-link active">Une journée au hasard</a>
+                        <a href="{{ path('articles_show', {id: random(1,2)}) }}" class="pl-5 nav-item nav-link active">Une journée au hasard</a>
                     </div>
                     <div class="navbar-nav ml-auto">
                         {% if app.user %}

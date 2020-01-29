@@ -63,15 +63,13 @@ class ArticlesController extends AbstractController
     }
 
     /**
-     * @Route("/random", name="articles_show_random", methods={"GET"})
-     * @param Articles $article
-     * @return Response
+     * @Route("/random", name="articles_show_random")
      */
-    public function showRandom(Articles $article): Response
+    public function showRandom()
     {
-
-        return $this->render('articles/show.html.twig', [
-            'article' => $article,
+        $id = rand(1,10);
+        return $this->redirectToRoute('articles_show', [
+            'id' => $id,
         ]);
     }
 

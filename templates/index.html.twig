@@ -5,10 +5,31 @@
 {% block body %}
     <main class="index">
         <h1 class="p-3">Bienvenue sur le journal de Maman</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    card
+        <div class="row">
+            <div class="offset-1 col-9">
+                <p class="text-presentation">
+                    Maman a écrit son journal de bord depuis son mariage jusqu'à son décès en 2014. Cette plateforme
+                    a pour but de partager à la famille proche et de numériser tous ces écrits.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Consulter les journaux</h5>
+                        <p class="card-text">De 1955 à 2016</p>
+                        <a href="{{ path('journaux_index') }}" class="btn btn-primary">Lire le journal</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Ajouter une page au journal</h5>
+                        <p class="card-text">Une page à la fois...</p>
+                        <a href="{{ path('articles_new') }}" class="btn btn-primary">Ajouter</a>
+                    </div>
                 </div>
             </div>
         </div>

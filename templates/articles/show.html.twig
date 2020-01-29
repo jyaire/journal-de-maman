@@ -3,24 +3,18 @@
 {% block title %}Articles{% endblock %}
 
 {% block body %}
-    <h1>Journal du {{ article.jour ? article.jour|date('d-m-Y') : '' }}</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Jour</th>
-                <td>{{ article.jour ? article.jour|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Contenu</th>
-                <td>{{ article.contenu }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <main class="journal">
+        <h1 class="p-3">Journal du {{ article.jour ? article.jour|date('d-m-Y') : '' }}</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-presentation">
+                        {{ article.contenu }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <a href="{{ path('articles_index') }}">back to list</a>
 
