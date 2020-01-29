@@ -27,6 +27,8 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/new", name="articles_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {

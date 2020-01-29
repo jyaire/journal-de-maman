@@ -2,12 +2,6 @@ parameters:
     git_dir: .
     bin_dir: bin
     tasks:
-        phpcs:
-            standard: ~
-        phpstan:
-            autoload_file: ~
-            configuration: ~
-            level: max
         phpmd:
             whitelist_patterns:
                 - 'src'
