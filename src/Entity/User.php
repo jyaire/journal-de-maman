@@ -48,6 +48,11 @@ class User implements UserInterface
      */
     private $link;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Articles", inversedBy="auteur")
+     */
+    private $articles;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -158,6 +163,18 @@ class User implements UserInterface
     public function setLink(?string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getArticles(): ?Articles
+    {
+        return $this->articles;
+    }
+
+    public function setArticles(?Articles $articles): self
+    {
+        $this->articles = $articles;
 
         return $this;
     }
