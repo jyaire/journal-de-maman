@@ -1,3 +1,18 @@
+@import '~bootstrap/scss/bootstrap';
+
+/* NAVBAR */
+
+nav {
+    font-family: 'Permanent Marker', Arial sans-serif;
+}
+
+/* GENERAL */
+
 body {
     background-color: lightgray;
+    font-family: 'Caveat', Arial sans-serif;
+    color : black;
+    font-size : 1rem;
 }
+
+

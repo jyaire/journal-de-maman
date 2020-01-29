@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Caveat|Permanent+Marker&display=swap" rel="stylesheet">
+        <title>{% block title %}Le journal de Maman{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
     </head>
     <body>
+    {% block header %}
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <a href="{{ path('index') }}" class="navbar-brand">Le Journal de Maman</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="#" class="pl-5 nav-item nav-link active">Accueil</a>
+                        <a href="#" class="pl-5 nav-item nav-link active">Journaux</a>
+                        <a href="#" class="pl-5 nav-item nav-link active">Une journée au hasard</a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="#" class="pr-5 nav-item nav-link active">Ajouter du contenu</a>
+                        {% if app.user %}
+                            Bienvenue {{ app.user.firstname }}
+                        {% else %}
+                            <a href="/login" class="nav-item nav-link active">Se connecter</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+        </header>
+    {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
