@@ -1,30 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Journaux{% endblock %}
+{% block title %}{{ journaux.titre }}{% endblock %}
 
 {% block body %}
-    <h1>Journaux</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ journaux.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ journaux.titre }}</td>
-            </tr>
-            <tr>
-                <th>Datedebut</th>
-                <td>{{ journaux.datedebut ? journaux.datedebut|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Datefin</th>
-                <td>{{ journaux.datefin ? journaux.datefin|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <main class="index">
+        <h1 class="p-3">{{ journaux.titre }}</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-presentation">
+                        Ce journal commence le {{ journaux.datedebut ? journaux.datedebut|date('d-m-Y') : '' }}
+                        et se termine le {{ journaux.datefin ? journaux.datefin|date('d-m-Y') : '' }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <a href="{{ path('journaux_index') }}">back to list</a>
 

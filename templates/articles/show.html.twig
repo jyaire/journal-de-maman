@@ -3,7 +3,7 @@
 {% block title %}Articles{% endblock %}
 
 {% block body %}
-    <h1>Articles</h1>
+    <h1>Journal du {{ article.jour ? article.jour|date('d-m-Y') : '' }}</h1>
 
     <table class="table">
         <tbody>

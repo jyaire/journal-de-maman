@@ -52,6 +52,8 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/{id}", name="articles_show", methods={"GET"})
+     * @param Articles $article
+     * @return Response
      */
     public function show(Articles $article): Response
     {
@@ -61,7 +63,23 @@ class ArticlesController extends AbstractController
     }
 
     /**
+     * @Route("/random", name="articles_show_random", methods={"GET"})
+     * @param Articles $article
+     * @return Response
+     */
+    public function showRandom(Articles $article): Response
+    {
+
+        return $this->render('articles/show.html.twig', [
+            'article' => $article,
+        ]);
+    }
+
+    /**
      * @Route("/{id}/edit", name="articles_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Articles $article
+     * @return Response
      */
     public function edit(Request $request, Articles $article): Response
     {
