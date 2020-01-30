@@ -20,6 +20,14 @@ body {
     font-size: x-large;
 }
 
+.caveat {
+    font-family: 'Caveat', Arial sans-serif;
+}
+
+.marker {
+    font-family: 'Permanent Marker', Arial sans-serif;
+}
+
 /* JOURNAUX */
 
 .journaux {
@@ -49,6 +57,7 @@ body {
         height: 280px;
         font-size: 1.4rem;
         color: white;
+        box-shadow: 8px 8px 12px #aaa;
     }
 
     .carnet-vert {
@@ -58,6 +67,7 @@ body {
         height: 280px;
         font-size: 1.4rem;
         color: white;
+        box-shadow: 8px 8px 12px #aaa;
     }
 
     .carnet-bleu {
@@ -67,6 +77,7 @@ body {
         height: 280px;
         font-size: 1.4rem;
         color: white;
+        box-shadow: 8px 8px 12px #aaa;
     }
 
     .carnet-noir {
@@ -76,6 +87,7 @@ body {
         height: 280px;
         font-size: 1.4rem;
         color: white;
+        box-shadow: 8px 8px 12px #aaa;
     }
 }
 
@@ -85,6 +97,7 @@ body {
 
     a {
         text-decoration: none;
+        color:inherit;
     }
 
     .bureau {
@@ -108,6 +121,7 @@ body {
         background-color: white;
         width: 100px;
         height: 150px;
+        box-shadow: 8px 8px 12px #aaa;
     }
 
     .jour-rouge {
@@ -137,8 +151,12 @@ body {
     }
 }
 
+/* PROFIL */
+
+
+
 /* FOOTER */
 
 .footer {
-    flex-shrink: 0;
+    border-top: solid white 1px;
 }

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Journaux;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,8 +14,12 @@ class JournauxType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('datedebut')
-            ->add('datefin')
+            ->add('datedebut', DateType::class, [
+                'widget' => 'single_text',
+            ])
+            ->add('datefin', DateType::class, [
+                'widget' => 'single_text',
+            ])
         ;
     }
 

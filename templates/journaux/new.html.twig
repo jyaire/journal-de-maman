@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Journaux{% endblock %}
+{% block title %}Nouveau journal{% endblock %}
 
 {% block body %}
-    <h1>Create new Journaux</h1>
+    <main class="carrousel p-3">
+    <h1>Ajout d'un nouveau journal</h1>
 
     {{ include('journaux/_form.html.twig') }}
 
-    <a href="{{ path('journaux_index') }}">back to list</a>
+    </main>
 {% endblock %}

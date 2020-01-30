@@ -38,10 +38,13 @@ class ArticlesController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $journal = $article->getJournal();
             $entityManager->persist($article);
             $entityManager->flush();
 
-            return $this->redirectToRoute('articles_index');
+            return $this->redirectToRoute('journaux_show', [
+                'id' => $journal->getId(),
+            ]);
         }
 
         return $this->render('articles/new.html.twig', [

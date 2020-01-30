@@ -28,8 +28,10 @@
                 {% set n = n + 1 %}
             {% endfor %}
         </div>
+        <div class="text-right p-3">
+            {% if app.user %}
+                <a href="{{ path('journaux_new') }}" class="btn btn-success">Ajouter un journal</a>
+            {% endif %}
+        </div>
     </main>
-{% if app.user %}
-    <a href="{{ path('journaux_new') }}" class="btn btn-primary">Ajouter un journal</a>
-{% endif %}
 {% endblock %}
