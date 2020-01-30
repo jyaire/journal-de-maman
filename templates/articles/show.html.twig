@@ -3,13 +3,18 @@
 {% block title %}Articles{% endblock %}
 
 {% block body %}
-    <main class="journal">
-        <h1 class="p-3">Journal du {{ article.jour ? article.jour|date('d-m-Y') : '' }}</h1>
+    <main class="article mt-5">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p class="text-presentation">
-                        {{ article.contenu }}
+            <div class="row justify-content-center">
+                <div class="col-8 fond-paper">
+                    <h2 class="text-center pt-4">
+                        {{ trans_day_hash[article.jour|date('l')] }}
+                        {{ article.jour ? article.jour|date('j') : '' }}
+                        {{ trans_month_hash[article.jour|date('F')] }}
+                        {{ article.jour ? article.jour|date('Y') : '' }}
+                    </h2>
+                    <p class="text-article pt-3 pr-5 pl-5">
+                        {{ article.contenu |nl2br }}
                     </p>
                 </div>
             </div>

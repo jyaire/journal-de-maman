@@ -34,7 +34,36 @@
             </nav>
         </header>
     {% endblock %}
+    {% set trans_day_hash = {
+        "Monday": "Lundi",
+        "Tuesday": "Mardi",
+        "Wednesday": "Mercredi",
+        "Thursday": "Jeudi",
+        "Friday": "Vendredi",
+        "Saturday": "Samedi",
+        "Sunday": "Dimanche"
+    }
+    %}
+    {% set trans_month_hash = {
+        "January": "janvier",
+        "February": "février",
+        "March": "mars",
+        "April": "avril",
+        "May": "mai",
+        "June": "juin",
+        "July": "juillet",
+        "August": "août",
+        "September": "septembre",
+        "October": "octobre",
+        "November": "novembre",
+        "December": "décembre",
+    } %}
         {% block body %}{% endblock %}
+        {% block footer %}
+            <footer>
+                
+            </footer>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

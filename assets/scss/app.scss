@@ -39,3 +39,17 @@ body {
 .shadow-date {
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
+
+/* ARTICLE */
+
+.article {
+    .fond-paper {
+        background-image:url('../../public/images/paperwhite.jpg');
+
+        .text-article {
+            font-size: 1.6rem;
+            text-indent: 40px;
+            line-height: 2.2rem;
+        }
+    }
+}
