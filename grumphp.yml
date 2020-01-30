@@ -1,0 +1,9 @@
+parameters:
+    git_dir: .
+    bin_dir: bin
+    tasks:
+        phpmd:
+            whitelist_patterns:
+                - 'src'
+            ruleset:
+                - 'phpmd.xml'

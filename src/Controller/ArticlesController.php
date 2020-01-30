@@ -27,6 +27,8 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/new", name="articles_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -50,6 +52,8 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/{id}", name="articles_show", methods={"GET"})
+     * @param Articles $article
+     * @return Response
      */
     public function show(Articles $article): Response
     {
@@ -60,6 +64,9 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="articles_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Articles $article
+     * @return Response
      */
     public function edit(Request $request, Articles $article): Response
     {

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54d29ddc-da02-4967-90ca-d583ff534e23" name="Default Changelist" comment="">
+    <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +44,20 @@
         <item name="journaldemaman@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="articles: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="journaux: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -181,6 +194,13 @@
       <path value="$PROJECT_DIR$/vendor/psr/link" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/phpro/grumphp" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/gitonomy/gitlib" />
+      <path value="$PROJECT_DIR$/vendor/phpmd/phpmd" />
+      <path value="$PROJECT_DIR$/vendor/pdepend/pdepend" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan" />
     </include_path>
   </component>
   <component name="ProjectId" id="1VsvRN4ZxdSEFcFm2sBy9OH0JFU" />
@@ -194,11 +214,13 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/src/Controller" />
       <recent name="$PROJECT_DIR$" />
@@ -221,7 +243,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="54d29ddc-da02-4967-90ca-d583ff534e23" name="Default Changelist" comment="" />
+      <changelist id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="" />
       <created>1578054607170</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -233,6 +255,9 @@
       <workItem from="1579264732369" duration="3791000" />
       <workItem from="1580237572831" duration="2188000" />
       <workItem from="1580286006648" duration="5579000" />
+      <workItem from="1580316239560" duration="4572000" />
+      <workItem from="1580328520249" duration="7726000" />
+      <workItem from="1580372197767" duration="20259000" />
     </task>
     <servers />
   </component>
@@ -264,11 +289,17 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state width="903" height="138" key="GridCell.Tab.0.right/0.27.1366.700@0.27.1366.700" timestamp="1580237602239" />
-    <state x="749" y="544" key="com.intellij.ide.util.TipDialog" timestamp="1580286293145">
-      <screen x="0" y="424" width="1440" height="476" />
+    <state x="1700" y="435" width="1012" height="730" key="SettingsEditor" timestamp="1580316091821">
+      <screen x="1440" y="397" width="1366" height="768" />
     </state>
+    <state x="1700" y="435" width="1012" height="730" key="SettingsEditor/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580316091821" />
+    <state x="2115" y="591" key="com.intellij.ide.util.TipDialog" timestamp="1580372197636">
+      <screen x="1440" y="397" width="1366" height="768" />
+    </state>
+    <state x="675" y="204" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1580328542068" />
     <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
     <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@0.424.1440.476" timestamp="1580286293145" />
+    <state x="2115" y="591" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580372197636" />
     <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1578057855518">
       <screen x="0" y="27" width="1366" height="700" />
     </state>

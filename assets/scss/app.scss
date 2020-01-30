@@ -1,3 +1,144 @@
+@import '~bootstrap/scss/bootstrap';
+
+/* NAVBAR */
+
+nav {
+    font-family: 'Permanent Marker', Arial sans-serif;
+}
+
+/* GENERAL */
+
 body {
     background-color: lightgray;
+    font-family: 'Caveat', Arial sans-serif;
+    color : black;
+    font-size : 1rem;
+}
+
+.text-presentation {
+    font-family: 'Caveat', Arial sans-serif;
+    font-size: x-large;
+}
+
+/* JOURNAUX */
+
+.journaux {
+
+    a {
+        text-decoration: none;
+    }
+
+    .bureau {
+        display: flex;
+
+        :hover {
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        :hover {
+            -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+        }
+    }
+
+    .carnet-rouge {
+        display: block;
+        background-image:url('../../public/images/carnet-rouge.jpg');
+        width: 200px;
+        height: 280px;
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    .carnet-vert {
+        display: block;
+        background-image:url('../../public/images/carnet-vert.jpg');
+        width: 200px;
+        height: 280px;
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    .carnet-bleu {
+        display: block;
+        background-image:url('../../public/images/carnet-bleu.jpg');
+        width: 200px;
+        height: 280px;
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    .carnet-noir {
+        display: block;
+        background-image:url('../../public/images/carnet-noir.jpg');
+        width: 200px;
+        height: 280px;
+        font-size: 1.4rem;
+        color: white;
+    }
+}
+
+/* EPHEMERIDES */
+
+.journal {
+
+    a {
+        text-decoration: none;
+    }
+
+    .bureau {
+        display: flex;
+
+        :hover {
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        :hover {
+            -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+        }
+    }
+
+    .ephemeride {
+        font-family: 'Bebas Neue', Arial sans-serif;
+        text-align: center;
+        text-decoration: none;
+        background-color: white;
+        width: 100px;
+        height: 150px;
+    }
+
+    .jour-rouge {
+        font-family: 'Bebas Neue', Arial sans-serif;
+        color: red;
+        font-size: 2rem;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .shadow-date {
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    }
+}
+
+/* ARTICLE */
+
+.article {
+    .fond-paper {
+        background-image:url('../../public/images/paperwhite.jpg');
+
+        .text-article {
+            font-size: 1.6rem;
+            text-indent: 40px;
+            line-height: 2.2rem;
+        }
+    }
+}
+
+/* FOOTER */
+
+.footer {
+    flex-shrink: 0;
 }

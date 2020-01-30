@@ -3,6 +3,39 @@
 {% block title %}Le journal de Maman{% endblock %}
 
 {% block body %}
-    <h1>Le journal de Maman</h1>
-
+    <main class="index">
+        <h1 class="p-3">Bienvenue sur le journal de Maman</h1>
+        <div class="row">
+            <div class="offset-1 col-9">
+                <p class="text-presentation">
+                    Maman a écrit son journal de bord depuis son mariage jusqu'à son décès en 2014. Cette plateforme
+                    a pour but de partager à la famille proche et de numériser tous ces écrits.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4 m-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Consulter les journaux</h5>
+                        <p class="card-text">De 1955 à 2016</p>
+                        <a href="{{ path('journaux_index') }}" class="btn btn-primary">Lire le journal</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 m-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Ajouter une page au journal</h5>
+                        <p class="card-text">Une page à la fois...</p>
+                        {% if app.user %}
+                            <a href="{{ path('articles_new') }}" class="btn btn-success">Ajouter</a>
+                        {% else %}
+                            <a href="{{ path('app_login') }}" class="btn btn-success">Se connecter</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 {% endblock %}

@@ -1,39 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Journaux index{% endblock %}
+{% block title %}Les journaux en ligne{% endblock %}
 
 {% block body %}
-    <h1>Journaux index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Datedebut</th>
-                <th>Datefin</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for journaux in journauxes %}
-            <tr>
-                <td>{{ journaux.id }}</td>
-                <td>{{ journaux.titre }}</td>
-                <td>{{ journaux.datedebut ? journaux.datedebut|date('Y-m-d') : '' }}</td>
-                <td>{{ journaux.datefin ? journaux.datefin|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('journaux_show', {'id': journaux.id}) }}">show</a>
-                    <a href="{{ path('journaux_edit', {'id': journaux.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('journaux_new') }}">Create new</a>
+    <main class="journaux">
+        <h1 class="p-3">Les journaux en ligne</h1>
+        <div class="bureau">
+            {% set n = 1 %}
+            {% for journaux in journauxes %}
+                {% set color = {
+                    "1": "vert",
+                    "2": "rouge",
+                    "3": "noir",
+                    "4": "bleu",
+                } %}
+                <a href="{{ path('journaux_show', {id: journaux.id}) }}" title="{{ journaux.titre }}">
+                <div class="carnet-{{ color[n] }} text-center p-1 pt-3 m-4">
+                    <p>JOURNAL<br>
+                        {{ journaux.titre }}</p><br>
+                    <p>du {{ journaux.datefin ? journaux.datefin|date('d/m/Y') : '' }}<br>
+                        au {{ journaux.datedebut ? journaux.datedebut|date('d/m/Y') : '' }}</p>
+                </div>
+                </a>
+                {% if n > 4 %}
+                    {% set n = 0 %}
+                {%  endif %}
+                {% set n = n + 1 %}
+            {% endfor %}
+        </div>
+    </main>
+{% if app.user %}
+    <a href="{{ path('journaux_new') }}" class="btn btn-primary">Ajouter un journal</a>
+{% endif %}
 {% endblock %}

@@ -34,11 +34,6 @@ class Articles
      */
     private $journal;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="articles")
-     */
-    private $auteur;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -76,18 +71,6 @@ class Articles
     public function setJournal(?Journaux $journal): self
     {
         $this->journal = $journal;
-
-        return $this;
-    }
-
-    public function getAuteur(): ?User
-    {
-        return $this->auteur;
-    }
-
-    public function setAuteur(?User $auteur): self
-    {
-        $this->auteur = $auteur;
 
         return $this;
     }

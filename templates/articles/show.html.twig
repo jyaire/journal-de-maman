@@ -3,28 +3,30 @@
 {% block title %}Articles{% endblock %}
 
 {% block body %}
-    <h1>Articles</h1>
+    <main class="article mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-2">
+                    <a href="{{ path('journaux_show', {'id': article.journal.id}) }}" class="btn btn-success">Sommaire de ce journal</a>
+                </div>
+                <div class="col-8 fond-paper">
+                    <h2 class="text-center pt-4">
+                        {{ trans_day_hash[article.jour|date('l')] }}
+                        {{ article.jour ? article.jour|date('j') : '' }}
+                        {{ trans_month_hash[article.jour|date('F')] }}
+                        {{ article.jour ? article.jour|date('Y') : '' }}
+                    </h2>
+                    <p class="text-article pt-3 pr-5 pl-5">
+                        {{ article.contenu |nl2br }}
+                    </p>
+                </div>
+                <div class="col-2">
+                    {% if app.user %}
+                    <a href="{{ path('articles_edit', {'id': article.id}) }}" class="btn btn-dark">Modifier le texte de cette page</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Jour</th>
-                <td>{{ article.jour ? article.jour|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Contenu</th>
-                <td>{{ article.contenu }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('articles_index') }}">back to list</a>
-
-    <a href="{{ path('articles_edit', {'id': article.id}) }}">edit</a>
-
-    {{ include('articles/_delete_form.html.twig') }}
 {% endblock %}
