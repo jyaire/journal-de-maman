@@ -29,6 +29,7 @@
             {% endfor %}
         </div>
     </main>
-
-    <a href="{{ path('journaux_new') }}">Create new</a>
+{% if app.user %}
+    <a href="{{ path('journaux_new') }}" class="btn btn-primary">Ajouter un journal</a>
+{% endif %}
 {% endblock %}

@@ -20,26 +20,6 @@ body {
     font-size: x-large;
 }
 
-/* EPHEMERIDE */
-
-.ephemeride {
-    font-family: 'Bebas Neue', Arial sans-serif;
-    text-align: center;
-    text-decoration: none;
-}
-
-.jour-rouge {
-    font-family: 'Bebas Neue', Arial sans-serif;
-    color: red;
-    font-size: 2rem;
-    text-align: center;
-    text-decoration: none;
-}
-
-.shadow-date {
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-}
-
 /* JOURNAUX */
 
 .journaux {
@@ -96,6 +76,50 @@ body {
         height: 280px;
         font-size: 1.4rem;
         color: white;
+    }
+}
+
+/* EPHEMERIDES */
+
+.journal {
+
+    a {
+        text-decoration: none;
+    }
+
+    .bureau {
+        display: flex;
+
+        :hover {
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        :hover {
+            -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+        }
+    }
+
+    .ephemeride {
+        font-family: 'Bebas Neue', Arial sans-serif;
+        text-align: center;
+        text-decoration: none;
+        background-color: white;
+        width: 100px;
+        height: 150px;
+    }
+
+    .jour-rouge {
+        font-family: 'Bebas Neue', Arial sans-serif;
+        color: red;
+        font-size: 2rem;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .shadow-date {
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
     }
 }
 

@@ -63,17 +63,6 @@ class ArticlesController extends AbstractController
     }
 
     /**
-     * @Route("/random", name="articles_show_random")
-     */
-    public function showRandom()
-    {
-        $id = rand(1,10);
-        return $this->redirectToRoute('articles_show', [
-            'id' => $id,
-        ]);
-    }
-
-    /**
      * @Route("/{id}/edit", name="articles_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Articles $article
