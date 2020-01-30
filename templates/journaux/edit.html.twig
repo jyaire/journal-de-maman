@@ -1,13 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Journaux{% endblock %}
+{% block title %}Edition d'un journal{% endblock %}
 
 {% block body %}
-    <h1>Edit Journaux</h1>
+<main class="carrousel p-3">
+    <h1>Edition d'un journal</h1>
 
-    {{ include('journaux/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('journaux_index') }}">back to list</a>
-
-    {{ include('journaux/_delete_form.html.twig') }}
+    {{ include('journaux/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+</main>
 {% endblock %}

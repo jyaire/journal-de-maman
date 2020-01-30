@@ -16,7 +16,7 @@
                         {{ article.jour ? article.jour|date('d') : '' }}
                     </p>
                     <p>
-                        {{ article.jour ? article.jour|date('F') : '' }}
+                        {{ trans_month_hash[article.jour|date('F')] }}
                     </p>
                 </div>
             </a>
@@ -24,13 +24,19 @@
                     <h3>Aucune page de ce journal n'a été entrée.</h3>
             {% endfor %}
         </div>
+        <div class="row justify-content-end pr-5">
+            {% if app.user %}
+                <a href="{{ path('articles_new') }}" class="btn btn-success mr-5">
+                    Ajouter une page
+                </a>
+                <a href="{{ path('journaux_edit', {'id': journaux.id}) }}" class="btn btn-primary">
+                    éditer les informations de ce journal
+                </a>
+            {% endif %}
+        </div>
     </main>
 
     <a href="{{ path('journaux_index') }}">Liste des journaux</a>
-    {% if app.user %}
-        <a href="{{ path('journaux_edit', {'id': journaux.id}) }}"class="btn btn-primary">
-            éditer les informations de ce journal
-        </a>
-    {% endif %}
+
 
 {% endblock %}
