@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticlesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/ArticlesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticlesType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/JournauxType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JournauxType.php" afterDir="false" />
@@ -271,7 +272,7 @@
       <workItem from="1580328520249" duration="7726000" />
       <workItem from="1580372197767" duration="20259000" />
       <workItem from="1580399552193" duration="3248000" />
-      <workItem from="1580414469259" duration="4329000" />
+      <workItem from="1580414469259" duration="4736000" />
     </task>
     <servers />
   </component>
