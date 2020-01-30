@@ -28,7 +28,11 @@
                     <div class="card-body">
                         <h5 class="card-title">Ajouter une page au journal</h5>
                         <p class="card-text">Une page à la fois...</p>
-                        <a href="{{ path('articles_new') }}" class="btn btn-primary">Ajouter</a>
+                        {% if app.user %}
+                            <a href="{{ path('articles_new') }}" class="btn btn-success">Ajouter</a>
+                        {% else %}
+                            <a href="{{ path('app_login') }}" class="btn btn-success">Se connecter</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
