@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/le-journal-de-maman.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +263,8 @@
       <workItem from="1580286006648" duration="5579000" />
       <workItem from="1580316239560" duration="4572000" />
       <workItem from="1580328520249" duration="7726000" />
-      <workItem from="1580372197767" duration="20259000" />
+      <workItem from="1580372197767" duration="20861000" />
+      <workItem from="1580395436799" duration="410000" />
     </task>
     <servers />
   </component>
@@ -293,13 +300,13 @@
       <screen x="1440" y="397" width="1366" height="768" />
     </state>
     <state x="1700" y="435" width="1012" height="730" key="SettingsEditor/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580316091821" />
-    <state x="2115" y="591" key="com.intellij.ide.util.TipDialog" timestamp="1580372197636">
+    <state x="2115" y="591" key="com.intellij.ide.util.TipDialog" timestamp="1580395514782">
       <screen x="1440" y="397" width="1366" height="768" />
     </state>
     <state x="675" y="204" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1580328542068" />
     <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
     <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@0.424.1440.476" timestamp="1580286293145" />
-    <state x="2115" y="591" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580372197636" />
+    <state x="2115" y="591" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580395514782" />
     <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1578057855518">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
