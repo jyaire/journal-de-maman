@@ -40,6 +40,65 @@ body {
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
+/* JOURNAUX */
+
+.journaux {
+
+    a {
+        text-decoration: none;
+    }
+
+    .bureau {
+        display: flex;
+
+        :hover {
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        :hover {
+            -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+        }
+    }
+
+    .carnet-rouge {
+        display: block;
+        background-image:url('../../public/images/carnet-rouge.jpg');
+        width: 200px;
+        height: 280px;
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    .carnet-vert {
+        display: block;
+        background-image:url('../../public/images/carnet-vert.jpg');
+        width: 200px;
+        height: 280px;
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    .carnet-bleu {
+        display: block;
+        background-image:url('../../public/images/carnet-bleu.jpg');
+        width: 200px;
+        height: 280px;
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    .carnet-noir {
+        display: block;
+        background-image:url('../../public/images/carnet-noir.jpg');
+        width: 200px;
+        height: 280px;
+        font-size: 1.4rem;
+        color: white;
+    }
+}
+
 /* ARTICLE */
 
 .article {

@@ -17,11 +17,19 @@
             <a href="{{ path('articles_show', {id: 1}) }}" class="ephemeride">
                 <div class="card-deck" style="width: 150px;">
                     <div class="card">
+                        {% for article in journaux.articles %}
                         <div class="card-body">
-                            <div class="card-title text-center">LUNDI</div>
-                            <div class="jour-rouge">{{ journaux.datedebut ? journaux.datedebut|date('d') : '' }}</div>
-                            <div class="card-title text-center">JANVIER</div>
+                            <div class="card-title text-center">
+                                {{ trans_day_hash[article.jour|date('l')] }}
+                            </div>
+                            <div class="jour-rouge">
+                                {{ article.jour ? article.jour|date('d') : '' }}
+                            </div>
+                            <div class="card-title text-center">
+                                {{ article.jour ? article.jour|date('F') : '' }}
+                            </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </a>
