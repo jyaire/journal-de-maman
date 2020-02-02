@@ -56,7 +56,7 @@ class User implements UserInterface
     private $articles;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default" : false})
      */
     private $isValidated;
 
