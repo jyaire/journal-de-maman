@@ -55,6 +55,11 @@ class User implements UserInterface
      */
     private $articles;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isValidated;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -201,6 +206,18 @@ class User implements UserInterface
                 $article->setAuteur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsValidated(): ?bool
+    {
+        return $this->isValidated;
+    }
+
+    public function setIsValidated(bool $isValidated): self
+    {
+        $this->isValidated = $isValidated;
 
         return $this;
     }
