@@ -18,6 +18,7 @@ class UserType extends AbstractType
             ->add('name')
             ->add('firstname')
             ->add('link')
+            ->add('isValidated')
         ;
     }
 

@@ -5,10 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class User implements UserInterface
 {
@@ -54,6 +56,11 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="App\Entity\Articles", mappedBy="auteur")
      */
     private $articles;
+
+    /**
+     * @ORM\Column(type="boolean", options={"default" : false})
+     */
+    private $isValidated;
 
     public function __construct()
     {
@@ -201,6 +208,18 @@ class User implements UserInterface
                 $article->setAuteur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsValidated(): ?bool
+    {
+        return $this->isValidated;
+    }
+
+    public function setIsValidated(bool $isValidated): self
+    {
+        $this->isValidated = $isValidated;
 
         return $this;
     }

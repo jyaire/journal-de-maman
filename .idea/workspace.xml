@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/le-journal-de-maman.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArticlesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticlesType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/JournauxType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JournauxType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/journaux/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/journaux/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/journaux/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/journaux/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/journaux/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +47,14 @@
         <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="journaux: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="migration_versions: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -234,16 +216,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:journaldemaman@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:journaldemaman@localhost [2]" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -272,6 +245,10 @@
       <workItem from="1580372197767" duration="20259000" />
       <workItem from="1580399552193" duration="3248000" />
       <workItem from="1580414469259" duration="4329000" />
+      <workItem from="1580457102132" duration="1394000" />
+      <workItem from="1580674338136" duration="1619000" />
+      <workItem from="1580720496889" duration="57000" />
+      <workItem from="1580757004286" duration="4073000" />
     </task>
     <servers />
   </component>
@@ -288,10 +265,10 @@
     </state>
     <state x="566" y="50" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.700@0.27.1366.700" timestamp="1580415613750" />
     <state x="1757" y="428" width="800" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580402812551" />
-    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580417381357">
+    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580675416356">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.700@0.27.1366.700" timestamp="1580417381357" />
+    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.700@0.27.1366.700" timestamp="1580675416356" />
     <state x="466" y="134" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578055275147">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
@@ -316,13 +293,17 @@
       <screen x="1440" y="397" width="1366" height="768" />
     </state>
     <state x="1700" y="435" width="1012" height="730" key="SettingsEditor/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580316091821" />
-    <state x="675" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1580414472940">
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1580720516276">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="675" y="204" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1580414472940" />
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1580720516276" />
     <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
     <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@0.424.1440.476" timestamp="1580286293145" />
-    <state x="2115" y="591" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580399570347" />
+    <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580457156377" />
+    <state x="449" y="291" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580761936072">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="449" y="291" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.700@0.27.1366.700" timestamp="1580761936072" />
     <state x="346" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1578057855518">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
