@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+    <main class="index">
+        <h1 class="p-3">Espace d'administration</h1>
+        <div class="row">
+            <div class="offset-1 col-11">
+                <p class="text-presentation">
+                    Ici, vous pouvez valider les demandes d'inscription.
+                </p>
+            </div>
+        </div>
+        {% for waiter in waiters %}
+        <div class="row align-items-center m-1">
+            <div class="offset-3 col-4 text-center shadow-lg ">
+                <p class="text-presentation">
+                    {% if waiter.isValidated == false %}
+                <p class="bg-warning p-1">En attente</p>
+                {% else %}
+                    <p class="bg-success p-1">Autorisé</p>
+                {% endif %}
+                {{waiter.firstname}} {{waiter.name}}<br>
+                (mail : {{waiter.email}})
+                </p>
+            </div>
+            <div class="col-5">
+                <p class="text-presentation">
+                    {% if waiter.isValidated == false %}
+                        <a href="" class="btn btn-success">Valider l'inscription</a>
+                    {% else %}
+                        <a href="" class="btn btn-danger">Supprimer l'accès</a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+{% endblock %}
