@@ -13,7 +13,7 @@
             </div>
         </div>
         {% for waiter in waiters %}
-        <div class="row align-items-center m-1">
+        <div class="row align-items-center m-2">
             <div class="offset-3 col-4 text-center shadow-lg ">
                 <p class="text-presentation">
                     {% if waiter.isValidated == false %}
@@ -21,16 +21,18 @@
                 {% else %}
                     <p class="bg-success p-1">Autorisé</p>
                 {% endif %}
-                {{waiter.firstname}} {{waiter.name}}<br>
-                (mail : {{waiter.email}})
+                <p class="marker">{{waiter.firstname}} {{waiter.name}}</p>
+                {{waiter.email}}
                 </p>
             </div>
             <div class="col-5">
                 <p class="text-presentation">
                     {% if waiter.isValidated == false %}
-                        <a href="" class="btn btn-success">Valider l'inscription</a>
+                        <a href="{{ path('admin_index', {id: waiter.id, getValidated: true}) }}"
+                           class="btn btn-success">Valider l'inscription</a>
                     {% else %}
-                        <a href="" class="btn btn-danger">Supprimer l'accès</a>
+                        <a href="{{ path('admin_index', {id: waiter.id, getValidated: false}) }}"
+                           class="btn btn-danger">Supprimer l'accès</a>
                     {% endif %}
                 </p>
             </div>

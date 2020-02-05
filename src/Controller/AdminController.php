@@ -2,9 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,14 +20,24 @@ class AdminController extends AbstractController
 {
     /**
      * @Route("/", name="admin_index")
-     * @param UserRepository $users
+     * @param UserRepository $userRepository
      * @param EntityManagerInterface $em
      * @return Response
      */
-    public function index(UserRepository $users, EntityManagerInterface $em) :Response
+    public function index(UserRepository $userRepository, EntityManagerInterface $em) :Response
     {
+        if (isset($_GET['getValidated'])) {
+            $user = $userRepository->findOneBy([
+            'id' => $_GET['id'],
+            ]);
+            $user->setIsValidated($_GET['getValidated']);
+            $em = $this->getDoctrine()->getManager();
+            $em-> persist($user);
+            $em->flush();
+        }
+
         // list user waiting approbation
-        $waiters = $users->findAll();
+        $waiters = $userRepository->findAll();
         return $this->render(
             'admin/index.html.twig',
             [
