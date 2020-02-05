@@ -25,6 +25,9 @@
                     <div class="navbar-nav ml-auto">
                         {% if app.user %}
                             <a href="{{ path('articles_new') }}" class="pr-5 nav-item nav-link active">Ajouter du contenu</a>
+                            {% if app.user.roles[0] == "ROLE_ADMIN" %}
+                                <a href="{{ path('admin_index') }}" class="pr-5 nav-item nav-link active">admin</a>
+                            {% endif %}
                             <a href="{{ path('user_show', {id: app.user.id}) }}" class="pr-5 nav-item nav-link active">Bienvenue {{ app.user.firstname }}</a>
                         {% else %}
                             <a href="{{ path('app_login') }}" class="nav-item nav-link active">Se connecter</a>
@@ -68,6 +71,8 @@
                 </div>
             </footer>
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>
