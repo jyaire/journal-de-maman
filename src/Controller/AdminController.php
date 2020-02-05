@@ -31,6 +31,12 @@ class AdminController extends AbstractController
             'id' => $_GET['id'],
             ]);
             $user->setIsValidated($_GET['getValidated']);
+            if ($_GET['getValidated'] == 1) {
+                $user->setRoles(["ROLE_LECTOR"]);
+            }
+            if ($_GET['getValidated'] == 0) {
+                $user->setRoles(["ROLE_USER"]);
+            }
             $em = $this->getDoctrine()->getManager();
             $em-> persist($user);
             $em->flush();
