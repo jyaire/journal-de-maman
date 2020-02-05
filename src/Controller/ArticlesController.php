@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Articles;
 use App\Form\ArticlesType;
 use App\Repository\ArticlesRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,8 @@ class ArticlesController extends AbstractController
 {
     /**
      * @Route("/", name="articles_index", methods={"GET"})
+     * @param ArticlesRepository $articlesRepository
+     * @return Response
      */
     public function index(ArticlesRepository $articlesRepository): Response
     {
@@ -55,6 +58,7 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/{id}", name="articles_show", methods={"GET"})
+     * @IsGranted("ROLE_LECTOR")
      * @param Articles $article
      * @return Response
      */
