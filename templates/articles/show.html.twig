@@ -8,6 +8,7 @@
             <div class="row justify-content-center">
                 <div class="col-2">
                     <a href="{{ path('journaux_show', {'id': article.journal.id}) }}" class="btn btn-success fixed">Sommaire de ce journal</a>
+                    <img src="{{ asset('images/encrier.png') }}" alt="Encrier" id="encrier" />
                 </div>
                 <div class="col-8 fond-paper">
                     <h2 class="text-center pt-4">
@@ -26,6 +27,7 @@
                         Modifier le texte de cette page
                     </a>
                     {% endif %}
+                    <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />
                 </div>
             </div>
         </div>
