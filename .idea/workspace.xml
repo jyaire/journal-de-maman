@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/journaux/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticlesController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,13 @@
         <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="articles: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -260,7 +267,7 @@
       <workItem from="1581242100292" duration="679000" />
       <workItem from="1581244608768" duration="647000" />
       <workItem from="1581322506256" duration="622000" />
-      <workItem from="1581504333817" duration="719000" />
+      <workItem from="1581504333817" duration="2105000" />
     </task>
     <servers />
   </component>
@@ -316,10 +323,11 @@
     <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
     <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@0.424.1440.476" timestamp="1580286293145" />
     <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580979827126" />
-    <state x="449" y="291" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580761936072">
-      <screen x="0" y="27" width="1366" height="700" />
+    <state x="1815" y="290" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581514121479">
+      <screen x="1366" y="0" width="1366" height="768" />
     </state>
     <state x="449" y="291" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.700@0.27.1366.700" timestamp="1580761936072" />
+    <state x="1815" y="290" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1581514121479" />
     <state x="1867" y="424" width="501" height="700" key="refactoring.ChangeSignatureDialog" timestamp="1580895792474">
       <screen x="1440" y="397" width="1366" height="768" />
     </state>

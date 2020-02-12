@@ -83,7 +83,9 @@ class ArticlesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('articles_index');
+            return $this->redirectToRoute('articles_show', [
+                'id' => $article->getId(),
+            ]);
         }
 
         return $this->render('articles/edit.html.twig', [
