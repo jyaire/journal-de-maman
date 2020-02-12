@@ -83,7 +83,12 @@ class ArticlesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('articles_index');
+            $message = "L'article a été modifié !";
+            $this->addFlash('success', $message);
+
+            return $this->redirectToRoute('articles_show', [
+                'id' => $article->getId(),
+            ]);
         }
 
         return $this->render('articles/edit.html.twig', [
