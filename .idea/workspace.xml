@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/anticpaper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/fleur-de-lys.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/pattern2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/patternfdl.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +41,13 @@
         <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="articles: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -261,6 +263,10 @@
       <workItem from="1580933467615" duration="495000" />
       <workItem from="1580979774179" duration="6381000" />
       <workItem from="1581064347882" duration="6668000" />
+      <workItem from="1581242100292" duration="679000" />
+      <workItem from="1581244608768" duration="647000" />
+      <workItem from="1581322506256" duration="622000" />
+      <workItem from="1581504333817" duration="2985000" />
     </task>
     <servers />
   </component>
@@ -277,6 +283,10 @@
     </state>
     <state x="566" y="50" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.700@0.27.1366.700" timestamp="1580415613750" />
     <state x="1757" y="428" width="800" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580402812551" />
+    <state x="366" y="113" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581244212282">
+      <screen x="0" y="27" width="1366" height="700" />
+    </state>
+    <state x="366" y="113" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1366.700@0.27.1366.700" timestamp="1581244212282" />
     <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580675416356">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
@@ -305,17 +315,18 @@
       <screen x="1440" y="397" width="1366" height="768" />
     </state>
     <state x="1700" y="435" width="1012" height="730" key="SettingsEditor/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580316091821" />
-    <state x="343" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1581064348401">
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1581322504985">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="343" y="248" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1581064348401" />
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1581322504985" />
     <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
     <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@0.424.1440.476" timestamp="1580286293145" />
     <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580979827126" />
-    <state x="449" y="291" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580761936072">
-      <screen x="0" y="27" width="1366" height="700" />
+    <state x="1815" y="290" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581514121479">
+      <screen x="1366" y="0" width="1366" height="768" />
     </state>
     <state x="449" y="291" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.700@0.27.1366.700" timestamp="1580761936072" />
+    <state x="1815" y="290" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1581514121479" />
     <state x="1867" y="424" width="501" height="700" key="refactoring.ChangeSignatureDialog" timestamp="1580895792474">
       <screen x="1440" y="397" width="1366" height="768" />
     </state>
