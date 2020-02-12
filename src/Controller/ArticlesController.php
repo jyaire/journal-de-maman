@@ -83,6 +83,9 @@ class ArticlesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $message = "L'article a été modifié !";
+            $this->addFlash('success', $message);
+
             return $this->redirectToRoute('articles_show', [
                 'id' => $article->getId(),
             ]);
