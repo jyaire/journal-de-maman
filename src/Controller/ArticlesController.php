@@ -5,8 +5,10 @@ namespace App\Controller;
 use App\Entity\Articles;
 use App\Form\ArticlesType;
 use App\Repository\ArticlesRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -69,6 +71,19 @@ class ArticlesController extends AbstractController
         ]);
     }
 
+//    /**
+//     * @Route("/random", name="random_article")
+//     * @param Articles $article
+ //    * @return RedirectResponse
+//     */
+//    public function getRandomArticle(Articles $article)
+//    {
+//        $id = $article->getId();
+//       return $this->redirectToRoute('articles_show', [
+//           'id' => $id,
+//       ]);
+//    }
+
     /**
      * @Route("/{id}/edit", name="articles_edit", methods={"GET","POST"})
      * @param Request $request
@@ -99,6 +114,9 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/{id}", name="articles_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Articles $article
+     * @return Response
      */
     public function delete(Request $request, Articles $article): Response
     {
