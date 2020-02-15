@@ -1,0 +1,16 @@
+<a href="{{ path('articles_show', {id: article.id}) }}">
+    <div class="ephemeride text-center m-3 p-2">
+        <p class="black-text">
+            {{ trans_day_hash[article.jour|date('l')] }}
+        </p>
+        <p class="jour-rouge">
+            {{ article.jour ? article.jour|date('d') : '' }}
+        </p>
+        <p class="black-text">
+            {{ trans_month_hash[article.jour|date('F')] }}
+        </p>
+        <p class="year-text">
+            {{ article.jour ? article.jour|date('Y') : '' }}
+        </p>
+    </div>
+</a>

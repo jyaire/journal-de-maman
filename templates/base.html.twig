@@ -19,8 +19,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="{{ path('journaux_index') }}" class="pl-5 nav-item nav-link active">Journaux</a>
-                        <a href="{{ path('articles_show', {id: random(1,3)}) }}" class="pl-5 nav-item nav-link active">Une journée au hasard</a>
+                        <a href="{{ path('journaux_index') }}" class="pl-5 nav-item nav-link active">Les journaux</a>
+                        <a href="{{ path('articles_index') }}" class="pl-5 nav-item nav-link active">Au jour le jour</a>
+                        {#<a href="{{ path('articles_show', {id: random(1,10)}) }}" class="pl-5 nav-item nav-link active">Une journée au hasard</a>#}
                     </div>
                     <div class="navbar-nav ml-auto">
                         {% if app.user %}

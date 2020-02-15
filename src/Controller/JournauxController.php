@@ -21,7 +21,7 @@ class JournauxController extends AbstractController
     public function index(JournauxRepository $journauxRepository): Response
     {
         return $this->render('journaux/index.html.twig', [
-            'journauxes' => $journauxRepository->findAll(),
+            'journauxes' => $journauxRepository->findBy([], ['datedebut' => 'ASC']),
         ]);
     }
 
@@ -50,6 +50,8 @@ class JournauxController extends AbstractController
 
     /**
      * @Route("/{id}", name="journaux_show", methods={"GET"})
+     * @param Journaux $journaux
+     * @return Response
      */
     public function show(Journaux $journaux): Response
     {
@@ -80,6 +82,9 @@ class JournauxController extends AbstractController
 
     /**
      * @Route("/{id}", name="journaux_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Journaux $journaux
+     * @return Response
      */
     public function delete(Request $request, Journaux $journaux): Response
     {

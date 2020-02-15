@@ -5,8 +5,10 @@ namespace App\Controller;
 use App\Entity\Articles;
 use App\Form\ArticlesType;
 use App\Repository\ArticlesRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,18 +20,20 @@ class ArticlesController extends AbstractController
 {
     /**
      * @Route("/", name="articles_index", methods={"GET"})
+     * @IsGranted("ROLE_LECTOR")
      * @param ArticlesRepository $articlesRepository
      * @return Response
      */
     public function index(ArticlesRepository $articlesRepository): Response
     {
         return $this->render('articles/index.html.twig', [
-            'articles' => $articlesRepository->findAll(),
+            'articles' => $articlesRepository->findBy([], ['jour' => 'ASC']),
         ]);
     }
 
     /**
      * @Route("/new", name="articles_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_LECTOR")
      * @param Request $request
      * @return Response
      */
@@ -69,8 +73,22 @@ class ArticlesController extends AbstractController
         ]);
     }
 
+//    /**
+//     * @Route("/random", name="random_article")
+//     * @param Articles $article
+ //    * @return RedirectResponse
+//     */
+//    public function getRandomArticle(Articles $article)
+//    {
+//        $id = $article->getId();
+//       return $this->redirectToRoute('articles_show', [
+//           'id' => $id,
+//       ]);
+//    }
+
     /**
      * @Route("/{id}/edit", name="articles_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_LECTOR")
      * @param Request $request
      * @param Articles $article
      * @return Response
@@ -99,6 +117,10 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/{id}", name="articles_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN")
+     * @param Request $request
+     * @param Articles $article
+     * @return Response
      */
     public function delete(Request $request, Articles $article): Response
     {
@@ -108,6 +130,8 @@ class ArticlesController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('articles_index');
+        return $this->redirectToRoute('journaux_show', [
+            'id' => $article->getJournal()->getId(),
+        ]);
     }
 }

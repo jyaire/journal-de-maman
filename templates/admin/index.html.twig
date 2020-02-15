@@ -27,13 +27,17 @@
             </div>
             <div class="col-5">
                 <p class="text-presentation">
-                    {% if waiter.isValidated == false %}
-                        <a href="{{ path('admin_index', {id: waiter.id, getValidated: true}) }}"
-                           class="btn btn-success">Valider l'inscription</a>
-                    {% else %}
-                        <a href="{{ path('admin_index', {id: waiter.id, getValidated: false}) }}"
-                           class="btn btn-danger">Supprimer l'accès</a>
-                    {% endif %}
+                        {%  if waiter.roles[0] == 'ROLE_ADMIN' %}
+                            Administrateur
+                        {% else %}
+                            {% if waiter.isValidated == false %}
+                                    <a href="{{ path('admin_index', {id: waiter.id, getValidated: true}) }}"
+                                       class="btn btn-success">Valider l'inscription</a>
+                                {% else %}
+                                    <a href="{{ path('admin_index', {id: waiter.id, getValidated: false}) }}"
+                                       class="btn btn-danger">Supprimer l'accès</a>
+                            {% endif %}
+                        {% endif %}
                 </p>
             </div>
         </div>
