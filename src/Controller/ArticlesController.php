@@ -126,6 +126,8 @@ class ArticlesController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('articles_index');
+        return $this->redirectToRoute('journaux_show', [
+            'id' => $article->getJournal()->getId(),
+        ]);
     }
 }

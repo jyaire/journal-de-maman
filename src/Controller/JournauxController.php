@@ -80,6 +80,9 @@ class JournauxController extends AbstractController
 
     /**
      * @Route("/{id}", name="journaux_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Journaux $journaux
+     * @return Response
      */
     public function delete(Request $request, Journaux $journaux): Response
     {

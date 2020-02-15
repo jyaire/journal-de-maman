@@ -26,12 +26,17 @@
         </div>
         <div class="row justify-content-end pr-5">
             {% if app.user %}
-                <a href="{{ path('articles_new', {'journal': journaux.id}) }}" class="btn btn-success mr-5">
+                <a href="{{ path('articles_new', {'journal': journaux.id}) }}" class="btn btn-success mr-3">
                     Ajouter une page
                 </a>
-                <a href="{{ path('journaux_edit', {'id': journaux.id}) }}" class="btn btn-primary">
-                    éditer les informations de ce journal
+                <a href="{{ path('journaux_edit', {'id': journaux.id}) }}" class="btn btn-primary mr-3">
+                    Editer les informations de ce journal
                 </a>
+                {% for role in app.user.roles %}
+                    {% if role == 'ROLE_ADMIN' %}
+                        {{ include('journaux/_delete_form.html.twig') }}
+                    {% endif %}
+                {% endfor %}
             {% endif %}
         </div>
     </main>

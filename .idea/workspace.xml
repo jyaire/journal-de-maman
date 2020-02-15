@@ -4,7 +4,11 @@
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/JournauxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JournauxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/journaux/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/journaux/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +276,8 @@
       <workItem from="1581522090374" duration="1255000" />
       <workItem from="1581606354559" duration="70000" />
       <workItem from="1581683159678" duration="1161000" />
-      <workItem from="1581688275919" duration="7726000" />
+      <workItem from="1581688275919" duration="8115000" />
+      <workItem from="1581750736171" duration="3614000" />
     </task>
     <servers />
   </component>
@@ -321,11 +326,12 @@
       <screen x="1440" y="397" width="1366" height="768" />
     </state>
     <state x="1700" y="435" width="1012" height="730" key="SettingsEditor/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580316091821" />
-    <state x="343" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1581688281305">
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1581750738336">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="343" y="248" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1581688281305" />
     <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog/1366.0.1366.768/0.27.1366.700@0.27.1366.700" timestamp="1581750738336" />
     <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@0.424.1440.476" timestamp="1580286293145" />
     <state x="749" y="544" key="com.intellij.ide.util.TipDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580979827126" />
     <state x="1815" y="290" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581514121479">
