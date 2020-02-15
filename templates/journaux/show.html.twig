@@ -6,7 +6,7 @@
     <main class="journal">
         <h1 class="p-3">{{ journaux.titre }}</h1>
         <div class="bureau">
-            {% for article in journaux.articles %}
+            {% for article in journaux.articles%}
             <a href="{{ path('articles_show', {id: article.id}) }}">
                 <div class="ephemeride text-center m-3 p-2">
                     <p>
