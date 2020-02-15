@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "29f491ad3bd23ab84e726c7dfbddf9d9",
+    "content-hash": "f5ea471c3a52590c439646345e7c89da",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -3074,6 +3074,59 @@
             "time": "2019-12-17T10:33:13+00:00"
         },
         {
+            "name": "symfony/google-mailer",
+            "version": "v5.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/google-mailer.git",
+                "reference": "e58364b57725dcd14fb6a7119e75d90af4efdfc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/google-mailer/zipball/e58364b57725dcd14fb6a7119e75d90af4efdfc8",
+                "reference": "e58364b57725dcd14fb6a7119e75d90af4efdfc8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5",
+                "symfony/mailer": "^4.4|^5.0"
+            },
+            "require-dev": {
+                "symfony/http-client": "^4.4|^5.0"
+            },
+            "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Mailer\\Bridge\\Google\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Google Mailer Bridge",
+            "homepage": "https://symfony.com",
+            "time": "2020-01-04T14:08:26+00:00"
+        },
+        {
             "name": "symfony/http-client",
             "version": "v5.0.2",
             "source": {
@@ -3484,16 +3537,16 @@
         },
         {
             "name": "symfony/mailer",
-            "version": "v5.0.2",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "82644dc053ccf80e2d67fd79976a2c0d08bb53c2"
+                "reference": "9410890bfe9b8700312b4e04ac38819b66e3b907"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/82644dc053ccf80e2d67fd79976a2c0d08bb53c2",
-                "reference": "82644dc053ccf80e2d67fd79976a2c0d08bb53c2",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/9410890bfe9b8700312b4e04ac38819b66e3b907",
+                "reference": "9410890bfe9b8700312b4e04ac38819b66e3b907",
                 "shasum": ""
             },
             "require": {
@@ -3547,7 +3600,7 @@
             ],
             "description": "Symfony Mailer Component",
             "homepage": "https://symfony.com",
-            "time": "2019-12-07T16:40:37+00:00"
+            "time": "2020-01-04T14:08:26+00:00"
         },
         {
             "name": "symfony/mime",
