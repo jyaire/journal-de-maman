@@ -46,8 +46,15 @@ class ArticlesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $journal = $article->getJournal();
+            $date = $article->getJour()->format('d/m/Y');
             $entityManager->persist($article);
             $entityManager->flush();
+
+            $message = "La page du $date a été ajoutée, merci !";
+            $this->addFlash(
+                'success',
+                $message
+            );
 
             return $this->redirectToRoute('journaux_show', [
                 'id' => $journal->getId(),
@@ -125,10 +132,17 @@ class ArticlesController extends AbstractController
     public function delete(Request $request, Articles $article): Response
     {
         if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
+            $date = $article->getJour()->format('d/m/Y');
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();
         }
+
+        $message = "La page du $date a été effacée !";
+        $this->addFlash(
+            'success',
+            $message
+        );
 
         return $this->redirectToRoute('journaux_show', [
             'id' => $article->getJournal()->getId(),
