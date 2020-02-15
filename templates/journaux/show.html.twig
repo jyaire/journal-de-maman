@@ -7,19 +7,7 @@
         <h1 class="p-3">{{ journaux.titre }}</h1>
         <div class="bureau">
             {% for article in journaux.articles%}
-            <a href="{{ path('articles_show', {id: article.id}) }}">
-                <div class="ephemeride text-center m-3 p-2">
-                    <p>
-                        {{ trans_day_hash[article.jour|date('l')] }}
-                    </p>
-                    <p class="jour-rouge">
-                        {{ article.jour ? article.jour|date('d') : '' }}
-                    </p>
-                    <p>
-                        {{ trans_month_hash[article.jour|date('F')] }}
-                    </p>
-                </div>
-            </a>
+            {% include 'ephemeride.html.twig' %}
                 {% else %}
                     <h3>Aucune page de ce journal n'a été entrée.</h3>
             {% endfor %}

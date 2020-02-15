@@ -110,7 +110,7 @@ body {
 
     a {
         text-decoration: none;
-        color:inherit;
+        color: inherit;
     }
 
     .bureau {
@@ -126,28 +126,40 @@ body {
             transform: rotate(-5deg);
         }
     }
+}
 
-    .ephemeride {
-        font-family: 'Bebas Neue', Arial sans-serif;
-        text-align: center;
-        text-decoration: none;
-        background-color: white;
-        width: 100px;
-        height: 150px;
-        box-shadow: 8px 8px 12px #aaa;
-    }
+.ephemeride {
+    font-family: 'Bebas Neue', Arial sans-serif;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    width: 110px;
+    height: 150px;
+    box-shadow: 8px 8px 12px #aaa;
+}
 
-    .jour-rouge {
-        font-family: 'Bebas Neue', Arial sans-serif;
-        color: red;
-        font-size: 2rem;
-        text-align: center;
-        text-decoration: none;
-    }
+.black-text {
+    font-size: 1.4rem;
+}
 
-    .shadow-date {
-        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-    }
+.jour-rouge {
+    font-family: 'Bebas Neue', Arial sans-serif;
+    color: red;
+    margin-top: -25px;
+    margin-bottom: -15px;
+    font-size: 3rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.year-text {
+    color: grey;
+    margin-top: -15px;
+    font-size: 1rem;
+}
+
+.shadow-date {
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
 /* ARTICLE */

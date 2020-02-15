@@ -3,35 +3,17 @@
 {% block title %}Articles index{% endblock %}
 
 {% block body %}
-    <h1>Articles index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Jour</th>
-                <th>Contenu</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<main class="journal">
+    <h1>Au jour le jour...</h1>
+    <div class="bureau">
         {% for article in articles %}
-            <tr>
-                <td>{{ article.id }}</td>
-                <td>{{ article.jour ? article.jour|date('Y-m-d') : '' }}</td>
-                <td>{{ article.contenu }}</td>
-                <td>
-                    <a href="{{ path('articles_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('articles_edit', {'id': article.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('articles_new') }}">Create new</a>
+        {%  include 'ephemeride.html.twig' %}
+        {%  endfor %}
+    </div>
+    {% if app.user %}
+    <a href="{{ path('articles_new') }}" class="btn btn-success ml-3 mt-5">
+        Ajouter une page
+    </a>
+    {% endif %}
+</main>
 {% endblock %}

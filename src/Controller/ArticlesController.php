@@ -20,6 +20,7 @@ class ArticlesController extends AbstractController
 {
     /**
      * @Route("/", name="articles_index", methods={"GET"})
+     * @IsGranted("ROLE_LECTOR")
      * @param ArticlesRepository $articlesRepository
      * @return Response
      */
@@ -32,6 +33,7 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/new", name="articles_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_LECTOR")
      * @param Request $request
      * @return Response
      */
@@ -86,6 +88,7 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="articles_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_LECTOR")
      * @param Request $request
      * @param Articles $article
      * @return Response
@@ -114,6 +117,7 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/{id}", name="articles_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN")
      * @param Request $request
      * @param Articles $article
      * @return Response
