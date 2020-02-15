@@ -6,6 +6,8 @@ Voir le wiki pour plus d'informations.
 Pour installer le projet :
 - cloner le repository
 - composer install
+- yarn encore
+- cache clear / warmup
 - symfony serve
 
 Dans un développement futur, ce projet sera utilisable pour n'importe quel journal de bord, jour après jour.
