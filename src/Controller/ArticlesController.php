@@ -21,7 +21,6 @@ class ArticlesController extends AbstractController
 {
     /**
      * @Route("/", name="articles_index", methods={"GET"})
-     * @IsGranted("ROLE_LECTOR")
      * @param ArticlesRepository $articlesRepository
      * @return Response
      */
