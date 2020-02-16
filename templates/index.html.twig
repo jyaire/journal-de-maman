@@ -14,28 +14,46 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-sm-4 m-3">
+            <div class="col-sm-3 m-3">
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title">Consulter les journaux</h5>
                         <p class="card-text">De 1955 à 2016</p>
-                        <a href="{{ path('journaux_index') }}" class="btn btn-primary">Lire le journal</a>
+                        <a href="{{ path('journaux_index') }}" class="btn btn-primary">Journaux</a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 m-3">
+            <div class="col-sm-3 m-3">
                 <div class="card text-center">
                     <div class="card-body">
-                        <h5 class="card-title">Ajouter une page au journal</h5>
+                        <h5 class="card-title">Lire au jour le jour</h5>
                         <p class="card-text">Une page à la fois...</p>
-                        {% if app.user %}
-                            <a href="{{ path('articles_new') }}" class="btn btn-success">Ajouter</a>
-                        {% else %}
-                            <a href="{{ path('app_login') }}" class="btn btn-success">Se connecter</a>
-                        {% endif %}
+                            <a href="{{ path('articles_index') }}" class="btn btn-warning">Lire une page</a>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-3 m-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Statistiques</h5>
+                        <p>{{ totalJournaux }} journaux</p>
+                        <p>{{ totalArticles }} pages</p>
+                    </div>
+                </div>
+            </div>
+            {% if app.user %}
+                {% if app.user.roles[0] == "ROLE_LECTOR" or app.user.roles[0] == "ROLE_ADMIN" %}
+                    <div class="col-sm-3 m-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Ajouter une page au journal</h5>
+                                <p class="card-text">Une page à la fois...</p>
+                                <a href="{{ path('articles_new') }}" class="btn btn-success">Ajouter</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
         </div>
     </main>
 {% endblock %}

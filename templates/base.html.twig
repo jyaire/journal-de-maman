@@ -25,7 +25,9 @@
                     </div>
                     <div class="navbar-nav ml-auto">
                         {% if app.user %}
+                            {% if app.user.roles[0] == "ROLE_LECTOR" or app.user.roles[0] == "ROLE_ADMIN" %}
                             <a href="{{ path('articles_new') }}" class="pr-5 nav-item nav-link active">Ajouter du contenu</a>
+                            {% endif %}
                             {% if app.user.roles[0] == "ROLE_ADMIN" %}
                                 <a href="{{ path('admin_index') }}" class="pr-5 nav-item nav-link active">admin</a>
                             {% endif %}
@@ -47,6 +49,25 @@
                 {{ message }}
             </div>
         {% endfor %}
+        {% if app.user %}
+            {% if app.user.roles[0] == 'ROLE_USER' %}
+                <div class="alert alert-danger text-center">
+                    Votre compte est en attente de validation, vous ne pouvez pas encore lire le journal...<br>
+                    Un mail vous préviendra de l'activation de votre compte.
+                </div>
+            {% endif %}
+            {% else %}
+                <div class="alert alert-danger text-center">
+                    Un compte est obligatoire pour lire le journal :
+                    <a href="{{ path('app_register') }}">
+                        faites la demande
+                    </a>
+                     ou
+                    <a href="{{ path('app_login') }}">
+                        connectez-vous !
+                    </a>
+                </div>
+        {% endif %}
     {% endblock %}
     {% set trans_day_hash = {
         "Monday": "Lundi",

@@ -6,11 +6,11 @@
     <main class="article mt-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-2">
-                    <a href="{{ path('journaux_show', {'id': article.journal.id}) }}" class="btn btn-success fixed">Sommaire de ce journal</a>
+                <div class="col-md-2">
+                    <a href="{{ path('journaux_show', {'id': article.journal.id}) }}" class="btn btn-success mb-3">Sommaire de ce journal</a>
                     <img src="{{ asset('images/encrier.png') }}" alt="Encrier" id="encrier" />
                 </div>
-                <div class="col-8 fond-paper">
+                <div class="col-md-8 col-sm-12 fond-paper">
                     <h2 class="text-center pt-4">
                         {{ trans_day_hash[article.jour|date('l')] }}
                         {{ article.jour ? article.jour|date('j') : '' }}
@@ -21,9 +21,9 @@
                         {{ article.contenu |nl2br }}
                     </p>
                 </div>
-                <div class="col-2">
+                <div class="col-md-2">
                     {% if app.user %}
-                    <a href="{{ path('articles_edit', {'id': article.id}) }}" class="btn btn-dark">
+                    <a href="{{ path('articles_edit', {'id': article.id}) }}" class="btn btn-dark mt-3">
                         Modifier le texte
                     </a>
                         {% for role in app.user.roles %}
