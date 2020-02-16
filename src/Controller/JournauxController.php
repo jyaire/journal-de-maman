@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Journaux;
 use App\Form\JournauxType;
 use App\Repository\JournauxRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +28,7 @@ class JournauxController extends AbstractController
 
     /**
      * @Route("/new", name="journaux_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_LECTOR")
      */
     public function new(Request $request): Response
     {
@@ -62,6 +64,7 @@ class JournauxController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="journaux_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_LECTOR")
      */
     public function edit(Request $request, Journaux $journaux): Response
     {
@@ -82,6 +85,7 @@ class JournauxController extends AbstractController
 
     /**
      * @Route("/{id}", name="journaux_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_LECTOR")
      * @param Request $request
      * @param Journaux $journaux
      * @return Response

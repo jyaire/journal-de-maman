@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use phpDocumentor\Reflection\Types\Boolean;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,6 +25,7 @@ class AdminController extends AbstractController
 {
     /**
      * @Route("/", name="admin_index")
+     * @IsGranted("ROLE_ADMIN")
      * @param UserRepository $userRepository
      * @param EntityManagerInterface $em
      * @param MailerInterface $mailer

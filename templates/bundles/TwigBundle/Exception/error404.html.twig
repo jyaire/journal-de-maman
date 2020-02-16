@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page inexistante{% endblock %}
+
+{% block body %}
+    <main class="article mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-2">
+                    <img src="{{ asset('images/encrier.png') }}" alt="Encrier" id="encrier" />
+                </div>
+                <div class="col-8 fond-paper">
+                    <h2 class="text-center pt-4">
+                        Page non trouvée
+                    </h2>
+                    <p class="text-article pt-3 pr-5 pl-5">
+                        Nous sommes désolé, cette page n'existe pas, n'existe plus, ou vous cherchez quelque chose auquel vous n'avez pas accès...
+                    </p>
+                    <p class="text-center mt-5">
+                    <a href="{{ path('index') }}">
+                        <img src="{{ asset('images/404.png') }}" alt="Erreur 404" class="img-fluid w-50" />
+                    </a>
+                    </p>
+                </div>
+                <div class="col-2">
+                    <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />
+                </div>
+            </div>
+        </div>
+        <div id="scroll_to_top">
+            <a href="#top"><img src="{{ asset('images/scrolltop.png') }}" alt="Retourner en haut" /></a>
+        </div>
+    </main>
+
+{% endblock %}
