@@ -172,6 +172,12 @@ body {
         padding:50px;
     }
 
+    @media(max-width: 700px) {
+        #porteplume {
+            display: none;
+        }
+    }
+
     #encrier {
         position: relative;
         width: 200px;
@@ -179,7 +185,13 @@ body {
         padding-top: 70px;
     }
 
-    .fond-paper {
+    @media(max-width: 1100px) {
+        #encrier {
+            display: none;
+        }
+    }
+
+        .fond-paper {
         background-image:url('../../public/images/paperwhite.jpg');
         -moz-box-shadow: 3px -3px 20px 5px #656565;
         -webkit-box-shadow: 3px -3px 20px 5px #656565;
