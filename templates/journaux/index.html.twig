@@ -18,8 +18,8 @@
                 <div class="carnet-{{ color[n] }} text-center p-1 pt-3 m-4">
                     <p>JOURNAL<br>
                         {{ journaux.titre }}</p><br>
-                    <p>du {{ journaux.datefin ? journaux.datefin|date('d/m/Y') : '' }}<br>
-                        au {{ journaux.datedebut ? journaux.datedebut|date('d/m/Y') : '' }}</p>
+                    <p>du {{ journaux.datedebut ? journaux.datedebut|date('d/m/Y') : '' }}<br>
+                        au {{ journaux.datefin ? journaux.datefin|date('d/m/Y') : '' }}</p>
                 </div>
                 </a>
                 {% set n = n + 1 %}

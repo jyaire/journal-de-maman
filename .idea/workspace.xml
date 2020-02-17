@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/journaux/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +42,34 @@
         <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="articles: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="journaux: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="migration_versions: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -267,6 +289,7 @@
       <workItem from="1581774750863" duration="9121000" />
       <workItem from="1581793728738" duration="3726000" />
       <workItem from="1581857256843" duration="2969000" />
+      <workItem from="1581969350617" duration="419000" />
     </task>
     <servers />
   </component>
@@ -316,10 +339,10 @@
       <screen x="1440" y="397" width="1366" height="768" />
     </state>
     <state x="1700" y="435" width="1012" height="730" key="SettingsEditor/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580316091821" />
-    <state x="1709" y="242" key="com.intellij.ide.util.TipDialog" timestamp="1581857343870">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1581969493752">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="343" y="248" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1581688281305" />
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1581969493752" />
     <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
     <state x="343" y="248" key="com.intellij.ide.util.TipDialog/1366.0.1366.768/0.27.1366.700@0.27.1366.700" timestamp="1581750738336" />
     <state x="1709" y="242" key="com.intellij.ide.util.TipDialog/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1581857343870" />
