@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ user.firstname }} {{ user.name }}{% endblock %}
+{% block title %}{{ user.firstname }} {{ user.lastname }}{% endblock %}
 
 {% block body %}
     <main class="container">
         <div class="row p-4">
             <div class="col-8">
-                <h1>Profil de {{ user.firstname }} {{ user.name }}</h1>
+                <h1>Profil de {{ user.firstname }} {{ user.lastname }}</h1>
             </div>
             <div class="col-4 text-right">
                 <a href="{{ path('app_logout')}}" class="btn btn-danger">Déconnexion</a>
