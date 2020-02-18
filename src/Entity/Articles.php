@@ -34,6 +34,31 @@ class Articles
      */
     private $journal;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $auteur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="ajouts")
+     */
+    private $ajouteur;
+
+    /**
+     * @ORM\Column(type="datetimetz", nullable=true)
+     */
+    private $ajoutdate;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="modifications")
+     */
+    private $modifieur;
+
+    /**
+     * @ORM\Column(type="datetimetz", nullable=true)
+     */
+    private $modifdate;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,6 +96,66 @@ class Articles
     public function setJournal(?Journaux $journal): self
     {
         $this->journal = $journal;
+
+        return $this;
+    }
+
+    public function getAuteur(): ?string
+    {
+        return $this->auteur;
+    }
+
+    public function setAuteur(?string $auteur): self
+    {
+        $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    public function getAjouteur(): ?User
+    {
+        return $this->ajouteur;
+    }
+
+    public function setAjouteur(?User $ajouteur): self
+    {
+        $this->ajouteur = $ajouteur;
+
+        return $this;
+    }
+
+    public function getAjoutdate(): ?\DateTimeInterface
+    {
+        return $this->ajoutdate;
+    }
+
+    public function setAjoutdate(?\DateTimeInterface $ajoutdate): self
+    {
+        $this->ajoutdate = $ajoutdate;
+
+        return $this;
+    }
+
+    public function getModifieur(): ?User
+    {
+        return $this->modifieur;
+    }
+
+    public function setModifieur(?User $modifieur): self
+    {
+        $this->modifieur = $modifieur;
+
+        return $this;
+    }
+
+    public function getModifdate(): ?\DateTimeInterface
+    {
+        return $this->modifdate;
+    }
+
+    public function setModifdate(?\DateTimeInterface $modifdate): self
+    {
+        $this->modifdate = $modifdate;
 
         return $this;
     }

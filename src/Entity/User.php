@@ -62,9 +62,21 @@ class User implements UserInterface
      */
     private $isValidated;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Articles", mappedBy="ajouteur")
+     */
+    private $ajouts;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Articles", mappedBy="modifieur")
+     */
+    private $modifications;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
+        $this->ajouts = new ArrayCollection();
+        $this->modifications = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -220,6 +232,68 @@ class User implements UserInterface
     public function setIsValidated(bool $isValidated): self
     {
         $this->isValidated = $isValidated;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Articles[]
+     */
+    public function getAjouts(): Collection
+    {
+        return $this->ajouts;
+    }
+
+    public function addAjout(Articles $ajout): self
+    {
+        if (!$this->ajouts->contains($ajout)) {
+            $this->ajouts[] = $ajout;
+            $ajout->setAjouteur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAjout(Articles $ajout): self
+    {
+        if ($this->ajouts->contains($ajout)) {
+            $this->ajouts->removeElement($ajout);
+            // set the owning side to null (unless already changed)
+            if ($ajout->getAjouteur() === $this) {
+                $ajout->setAjouteur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Articles[]
+     */
+    public function getModifications(): Collection
+    {
+        return $this->modifications;
+    }
+
+    public function addModification(Articles $modification): self
+    {
+        if (!$this->modifications->contains($modification)) {
+            $this->modifications[] = $modification;
+            $modification->setModifieur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeModification(Articles $modification): self
+    {
+        if ($this->modifications->contains($modification)) {
+            $this->modifications->removeElement($modification);
+            // set the owning side to null (unless already changed)
+            if ($modification->getModifieur() === $this) {
+                $modification->setModifieur(null);
+            }
+        }
 
         return $this;
     }

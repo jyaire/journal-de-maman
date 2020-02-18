@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Articles;
+use App\Entity\User;
 use App\Form\ArticlesType;
 use App\Repository\ArticlesRepository;
 use App\Repository\JournauxRepository;
@@ -13,6 +14,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Config\Definition\Exception\Exception;
+use DateTime;
 
 /**
  * @Route("/articles")
@@ -36,8 +39,8 @@ class ArticlesController extends AbstractController
      * @IsGranted("ROLE_LECTOR")
      * @param Request $request
      * @param JournauxRepository $journaux
-     * @param EntityManagerInterface $em
      * @return Response
+     * @throws \Exception
      */
     public function new(Request $request, JournauxRepository $journaux): Response
     {
@@ -62,6 +65,7 @@ class ArticlesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $journal = $article->getJournal();
+            $article->setAjouteur($this->getUser())->setAjoutdate(new \DateTime('now'));
             $date = $article->getJour()->format('d/m/Y');
             $entityManager->persist($article);
             $entityManager->flush();
@@ -115,6 +119,7 @@ class ArticlesController extends AbstractController
      * @param Request $request
      * @param Articles $article
      * @return Response
+     * @throws \Exception
      */
     public function edit(Request $request, Articles $article): Response
     {
@@ -122,6 +127,7 @@ class ArticlesController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $article->setModifieur($this->getUser())->setModifdate(new \DateTime('now'));
             $this->getDoctrine()->getManager()->flush();
 
             $message = "L'article a été modifié !";

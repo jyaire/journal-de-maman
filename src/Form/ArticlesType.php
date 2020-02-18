@@ -19,6 +19,7 @@ class ArticlesType extends AbstractType
             ])
             ->add('contenu')
             ->add('journal')
+            ->add('auteur')
         ;
     }
 

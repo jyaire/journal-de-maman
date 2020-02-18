@@ -23,9 +23,14 @@
 </div>
 <div class="row p-3">
     <div class="col-3 text-right marker">
+        {{ form_label(form.auteur) }}
     </div>
-    <div class="col-9 lead">
-        <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+    <div class="col-6 lead">
+        {{ form_widget(form.auteur) }}
+        <br>Laisser vide s'il s'agit de Maman
+    </div>
+    <div class="col-3 lead">
+        <button class="btn btn-success m-1">{{ button_label|default('Enregistrer') }}</button>
         <a href="{{ path('journaux_index') }}" class="btn btn-dark">Annuler</a>
     </div>
 </div>

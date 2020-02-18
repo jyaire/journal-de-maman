@@ -35,6 +35,25 @@
                     <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />
                 </div>
             </div>
+            <div class="row justify-content-center mt-3">
+                <p class="text-center">Texte écrit par
+                {% if article.auteur %}
+                    {{ article.auteur }}
+                    {% else %}
+                    Geneviève Masson
+                {% endif %}
+                </p>
+            </div>
+            <div class="row justify-content-center">
+                {% if article.ajouteur %}
+                <p class="text-center">
+                    Article ajouté par {{ article.ajouteur.firstname}} {{ article.ajouteur.lastname}} le {{ article.ajoutdate|date("d/m/Y") }}
+                    {% if article.modifdate %}
+                        ,<br>édité par {{ article.modifieur.firstname}} {{ article.modifieur.lastname}} le {{ article.modifdate|date("d/m/Y") }}
+                    {% endif %}
+                    </p>
+                {% endif %}
+            </div>
         </div>
         <div id="scroll_to_top">
             <a href="#top"><img src="{{ asset('images/scrolltop.png') }}" alt="Retourner en haut" /></a>
