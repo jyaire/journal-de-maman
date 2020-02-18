@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Maintenance{% endblock %}
+
+{% block body %}
+    <main class="article mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-2">
+                    <img src="{{ asset('images/encrier.png') }}" alt="Encrier" id="encrier" />
+                </div>
+                <div class="col-8 fond-paper">
+                    <h2 class="text-center pt-4">
+                        Site en maintenance
+                    </h2>
+                    <p class="text-center mt-5">
+                        <a href="{{ path('index') }}">
+                            <img src="{{ asset('images/maintenance.png') }}" alt="Erreur" class="img-fluid" />
+                        </a>
+                    </p>
+                    <p class="text-article pt-3 pr-5 pl-5">
+                        Désolé, il y a une petite interruption sur le fonctionnement du site,
+                        une mise à jour est certainement en cours.
+                        <br>Repassez dans 10 mns !
+                    </p>
+                </div>
+                <div class="col-2">
+                    <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />
+                </div>
+            </div>
+        </div>
+        <div id="scroll_to_top">
+            <a href="#top"><img src="{{ asset('images/scrolltop.png') }}" alt="Retourner en haut" /></a>
+        </div>
+    </main>
+
+{% endblock %}
