@@ -59,6 +59,22 @@ class Articles
      */
     private $modifdate;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Commentaires", mappedBy="article")
+     */
+    private $commentaires;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Likes", mappedBy="article")
+     */
+    private $likes;
+
+    public function __construct()
+    {
+        $this->commentaires = new ArrayCollection();
+        $this->likes = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -156,6 +172,68 @@ class Articles
     public function setModifdate(?\DateTimeInterface $modifdate): self
     {
         $this->modifdate = $modifdate;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Commentaires[]
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaires $commentaire): self
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires[] = $commentaire;
+            $commentaire->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaires $commentaire): self
+    {
+        if ($this->commentaires->contains($commentaire)) {
+            $this->commentaires->removeElement($commentaire);
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getArticle() === $this) {
+                $commentaire->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Likes[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(Likes $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(Likes $like): self
+    {
+        if ($this->likes->contains($like)) {
+            $this->likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getArticle() === $this) {
+                $like->setArticle(null);
+            }
+        }
 
         return $this;
     }

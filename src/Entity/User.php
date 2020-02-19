@@ -72,11 +72,23 @@ class User implements UserInterface
      */
     private $modifications;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Commentaires", mappedBy="auteurcom")
+     */
+    private $commentaires;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Likes", mappedBy="auteurlike")
+     */
+    private $likes;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
         $this->ajouts = new ArrayCollection();
         $this->modifications = new ArrayCollection();
+        $this->commentaires = new ArrayCollection();
+        $this->likes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -292,6 +304,68 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($modification->getModifieur() === $this) {
                 $modification->setModifieur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Commentaires[]
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaires $commentaire): self
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires[] = $commentaire;
+            $commentaire->setAuteurcom($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaires $commentaire): self
+    {
+        if ($this->commentaires->contains($commentaire)) {
+            $this->commentaires->removeElement($commentaire);
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getAuteurcom() === $this) {
+                $commentaire->setAuteurcom(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Likes[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(Likes $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setAuteurlike($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(Likes $like): self
+    {
+        if ($this->likes->contains($like)) {
+            $this->likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getAuteurlike() === $this) {
+                $like->setAuteurlike(null);
             }
         }
 
