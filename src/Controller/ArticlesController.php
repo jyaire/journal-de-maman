@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Articles;
+use App\Entity\Likes;
 use App\Entity\User;
 use App\Form\ArticlesType;
 use App\Repository\ArticlesRepository;
@@ -92,11 +93,47 @@ class ArticlesController extends AbstractController
      * @IsGranted("ROLE_LECTOR")
      * @param Articles $article
      * @return Response
+     * @throws \Exception
      */
     public function show(Articles $article): Response
     {
+        $coeur = false;
+        $likes = $article->getLikes();
+        if (isset($likes)) {
+            // condition si un fav correspond à cet article et à l'utilisateur connecté pour colorier le coeur en rose
+            foreach ($likes as $like) {
+                if ($like->getArticle() === $article and $like->getAuteurlike() == ($this->getUser())) {
+                    $coeur = true;
+                }
+            }
+        }
+
+        if (isset($_GET['fav'])) {
+            $entityManager = $this->getDoctrine()->getManager();
+            if ($_GET['fav'] == true) {
+                $like = new Likes();
+                $like->setArticle($article)->setAuteurlike($this->getUser())->setDatelike(new \DateTime('now'));
+                $entityManager->persist($like);
+                $entityManager->flush();
+
+                $message = "Cette date a été ajoutée à vos favoris !";
+                $this->addFlash(
+                    'success',
+                    $message
+                );
+            } else {
+                // ici il faut ssupprimer le like
+                $message = "Date supprimée de vos favoris";
+                $this->addFlash(
+                    'success',
+                    $message
+                );
+            }
+        }
+
         return $this->render('articles/show.html.twig', [
             'article' => $article,
+            'coeur' => $coeur,
         ]);
     }
 

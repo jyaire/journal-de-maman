@@ -7,10 +7,18 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-2">
-                    <a href="{{ path('journaux_show', {'id': article.journal.id}) }}" class="btn btn-success mb-3">Sommaire de ce journal</a>
+                    <a href="{{ path('journaux_show', {'id': article.journal.id}) }}">
+                        <img src="{{ asset('images/retour-sommaire.png') }}" alt="Sommaire de ce journal" class="icon-nav-sommaire" />
+                    </a><br>
                     <img src="{{ asset('images/encrier.png') }}" alt="Encrier" id="encrier" />
                 </div>
                 <div class="col-md-8 col-sm-12 fond-paper">
+                    <a href="{{ path('journaux_show', {'id': article.journal.id}) }}">
+                        <img src="{{ asset('images/fleche-retour.png') }}" alt="Jour précédent" class="icon-nav-gauche" />
+                    </a>
+                    <a href="{{ path('journaux_show', {'id': article.journal.id}) }}">
+                        <img src="{{ asset('images/fleche-suivant.png') }}" alt="Jour suivant" class="icon-nav-droite" />
+                    </a>
                     <h2 class="text-center pt-4">
                         {{ trans_day_hash[article.jour|date('l')] }}
                         {{ article.jour ? article.jour|date('j') : '' }}
@@ -22,6 +30,7 @@
                     </p>
                 </div>
                 <div class="col-md-2">
+                    <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />
                     {% if app.user %}
                     <a href="{{ path('articles_edit', {'id': article.id}) }}" class="btn btn-dark mt-3">
                         Modifier le texte
@@ -32,27 +41,53 @@
                             {% endif %}
                         {% endfor %}
                     {% endif %}
-                    <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />
                 </div>
             </div>
             <div class="row justify-content-center mt-3">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-7">
                 <p class="text-center">Texte écrit par
                 {% if article.auteur %}
                     {{ article.auteur }}
                     {% else %}
                     Geneviève Masson
                 {% endif %}
-                </p>
-            </div>
-            <div class="row justify-content-center">
+                    <br>
                 {% if article.ajouteur %}
                 <p class="text-center">
                     Article ajouté par {{ article.ajouteur.firstname}} {{ article.ajouteur.lastname}} le {{ article.ajoutdate|date("d/m/Y") }}
                     {% if article.modifdate %}
                         ,<br>édité par {{ article.modifieur.firstname}} {{ article.modifieur.lastname}} le {{ article.modifdate|date("d/m/Y") }}
                     {% endif %}
-                    </p>
+                </p>
                 {% endif %}
+                </p>
+                </div>
+                <div class="col-md-1">
+                    {% if coeur == true %}
+                    <a href="{{ path('articles_show', {'id': article.id, 'fav': false}) }}">
+                        <img src="{{ asset('images/coeur-rose.png') }}" alt="Enlever des favoris" class="icon-coeur" />
+                    </a>
+                    {% else %}
+                        <a href="{{ path('articles_show', {'id': article.id, 'fav': true}) }}">
+                            <img src="{{ asset('images/coeur.png') }}" alt="Mettre en favori" class="icon-coeur" />
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-7">
+
+                </div>
+                <div class="col-md-2">
+                </div>
             </div>
         </div>
         <div id="scroll_to_top">
