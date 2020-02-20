@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticlesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +279,7 @@
       <workItem from="1581857256843" duration="2969000" />
       <workItem from="1581969350617" duration="7130000" />
       <workItem from="1582033854381" duration="8701000" />
-      <workItem from="1582184338506" duration="3846000" />
+      <workItem from="1582184338506" duration="5644000" />
     </task>
     <servers />
   </component>
@@ -299,10 +300,10 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="366" y="113" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1366.700@0.27.1366.700" timestamp="1581244212282" />
-    <state x="2123" y="117" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581784660695">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582197567145">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.700@0.27.1366.700" timestamp="1580675416356" />
+    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.700@0.27.1366.700" timestamp="1582197567145" />
     <state x="2123" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1581784660695" />
     <state x="466" y="134" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581606413994">
       <screen x="0" y="27" width="1366" height="700" />
