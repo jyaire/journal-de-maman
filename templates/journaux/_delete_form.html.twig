@@ -1,6 +1,6 @@
-<form method="post" action="{{ path('journaux_delete', {'id': journaux.id}) }}"
+<form method="post" action="{{ path('journaux_delete', {'id': journal.id}) }}"
       onsubmit="return confirm('La suppression de ce journal sera effective seulement s\'il est vide');">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ journaux.id) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ journal.id) }}">
     <button class="btn btn-danger">Supprimer ce journal</button>
 </form>

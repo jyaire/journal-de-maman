@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Journaux;
 use App\Form\JournauxType;
+use App\Repository\ArticlesRepository;
 use App\Repository\JournauxRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -52,13 +53,13 @@ class JournauxController extends AbstractController
 
     /**
      * @Route("/{id}", name="journaux_show", methods={"GET"})
-     * @param Journaux $journaux
+     * @param Journaux $journal
      * @return Response
      */
-    public function show(Journaux $journaux): Response
+    public function show(Journaux $journal): Response
     {
         return $this->render('journaux/show.html.twig', [
-            'journaux' => $journaux,
+            'journal' => $journal,
         ]);
     }
 
