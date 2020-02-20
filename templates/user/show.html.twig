@@ -56,5 +56,22 @@
                 {% endif %}
             </div>
         </div>
+        <div class="row p-3">
+            <div class="offset-2 col-3 text-right marker">
+                Pages favorites :
+            </div>
+            <div class="col-5 lead">
+                {% for like in likes %}
+                <p>
+                    <a href="{{ path('articles_show', {'id': like.article.id}) }}">
+                    {{ trans_day_hash[like.article.jour|date('l')] }}
+                    {{ like.article.jour ? like.article.jour|date('j') : '' }}
+                    {{ trans_month_hash[like.article.jour|date('F')] }}
+                    {{ like.article.jour ? like.article.jour|date('Y') : '' }}
+                    </a>
+                </p>
+                {% endfor %}
+            </div>
+        </div>
     </main>
 {% endblock %}

@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArticlesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticlesType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ArticlesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArticlesRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,14 +58,7 @@
         <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="journaux: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="migration_versions: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="likes: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -218,17 +210,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/templates/journaux" />
-      <recent name="$PROJECT_DIR$/templates/articles" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception" />
       <recent name="$PROJECT_DIR$/templates/emails" />
       <recent name="$PROJECT_DIR$/assets/images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/templates/journaux" />
+      <recent name="$PROJECT_DIR$/templates/articles" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -289,6 +281,7 @@
       <workItem from="1581857256843" duration="2969000" />
       <workItem from="1581969350617" duration="7130000" />
       <workItem from="1582033854381" duration="8701000" />
+      <workItem from="1582184338506" duration="8286000" />
     </task>
     <servers />
   </component>
@@ -309,10 +302,10 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state x="366" y="113" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1366.700@0.27.1366.700" timestamp="1581244212282" />
-    <state x="2123" y="117" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581784660695">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582197567145">
+      <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.700@0.27.1366.700" timestamp="1580675416356" />
+    <state x="757" y="134" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.700@0.27.1366.700" timestamp="1582197567145" />
     <state x="2123" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1581784660695" />
     <state x="466" y="134" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581606413994">
       <screen x="0" y="27" width="1366" height="700" />
@@ -342,10 +335,10 @@
       <screen x="0" y="27" width="2732" height="700" />
     </state>
     <state x="1761" y="27" width="566" height="700" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.2732.700@0.27.2732.700" timestamp="1582035117672" />
-    <state x="343" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1582034098603">
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1582184338812">
       <screen x="0" y="27" width="1366" height="700" />
     </state>
-    <state x="343" y="248" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1582034098603" />
+    <state x="343" y="248" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1582184338812" />
     <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
     <state x="343" y="248" key="com.intellij.ide.util.TipDialog/1366.0.1366.768/0.27.1366.700@0.27.1366.700" timestamp="1581750738336" />
     <state x="1709" y="242" key="com.intellij.ide.util.TipDialog/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1581857343870" />

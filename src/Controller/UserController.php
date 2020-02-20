@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Likes;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
@@ -59,8 +60,14 @@ class UserController extends AbstractController
      */
     public function show(User $user): Response
     {
+        $em = $this->getDoctrine()->getManager();
+        $likes = $em
+            ->getRepository(Likes::class)
+            ->findBy(['auteurlike' => $this->getUser()]);
+
         return $this->render('user/show.html.twig', [
             'user' => $user,
+            'likes' => $likes,
         ]);
     }
 

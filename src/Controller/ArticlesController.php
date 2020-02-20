@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Articles;
+use App\Entity\Likes;
 use App\Entity\User;
 use App\Form\ArticlesType;
 use App\Repository\ArticlesRepository;
@@ -15,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Config\Definition\Exception\Exception;
-use DateTime;
+use \DateTime;
 
 /**
  * @Route("/articles")
@@ -65,7 +66,7 @@ class ArticlesController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $journal = $article->getJournal();
-            $article->setAjouteur($this->getUser())->setAjoutdate(new \DateTime('now'));
+            $article->setAjouteur($this->getUser())->setAjoutdate(new DateTime('now'));
             $date = $article->getJour()->format('d/m/Y');
             $entityManager->persist($article);
             $entityManager->flush();
@@ -92,11 +93,61 @@ class ArticlesController extends AbstractController
      * @IsGranted("ROLE_LECTOR")
      * @param Articles $article
      * @return Response
+     * @throws \Exception
      */
-    public function show(Articles $article): Response
+    public function show(Articles $article, ArticlesRepository $articles): Response
     {
+        if (isset($_GET['fav'])) {
+            $entityManager = $this->getDoctrine()->getManager();
+            if ($_GET['fav'] == true) {
+                // ajout du like
+                $like = new Likes();
+                $like->setArticle($article)->setAuteurlike($this->getUser())->setDatelike(new DateTime('now'));
+                $entityManager->persist($like);
+                $entityManager->flush();
+
+                $message = "Cette date a été ajoutée à vos favoris !";
+                $this->addFlash(
+                    'success',
+                    $message
+                );
+            } else {
+                // suppression du like
+                $em = $this->getDoctrine()->getManager();
+                $like = $em
+                    ->getRepository(Likes::class)
+                    ->findOneBy(['auteurlike' => $this->getUser(), 'article' => $article]);
+                $em->remove($like);
+                $em->flush();
+                $message = "Date supprimée de vos favoris";
+                $this->addFlash(
+                    'success',
+                    $message
+                );
+            }
+        }
+
+        // gestion de la couleur du coeur
+        $coeur = false;
+        $likes = $article->getLikes();
+        if (isset($likes)) {
+            // condition si un fav correspond à cet article et à l'utilisateur connecté pour colorier le coeur en rose
+            foreach ($likes as $like) {
+                if ($like->getArticle() === $article and $like->getAuteurlike() == ($this->getUser())) {
+                    $coeur = true;
+                }
+            }
+        }
+
+        // cherche l'article précédent et suivant
+        $previous = $articles->previous($article);
+            $next = $articles->next($article);
+
         return $this->render('articles/show.html.twig', [
             'article' => $article,
+            'coeur' => $coeur,
+            'previous' => $previous,
+            'next' => $next,
         ]);
     }
 
@@ -127,7 +178,7 @@ class ArticlesController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $article->setModifieur($this->getUser())->setModifdate(new \DateTime('now'));
+            $article->setModifieur($this->getUser())->setModifdate(new DateTime('now'));
             $this->getDoctrine()->getManager()->flush();
 
             $message = "L'article a été modifié !";
