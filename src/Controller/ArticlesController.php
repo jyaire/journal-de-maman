@@ -95,7 +95,7 @@ class ArticlesController extends AbstractController
      * @return Response
      * @throws \Exception
      */
-    public function show(Articles $article): Response
+    public function show(Articles $article, ArticlesRepository $articles): Response
     {
         if (isset($_GET['fav'])) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -139,9 +139,15 @@ class ArticlesController extends AbstractController
             }
         }
 
+        // cherche l'article précédent et suivant
+        $previous = $articles->previous($article);
+            $next = $articles->next($article);
+
         return $this->render('articles/show.html.twig', [
             'article' => $article,
             'coeur' => $coeur,
+            'previous' => $previous,
+            'next' => $next,
         ]);
     }
 

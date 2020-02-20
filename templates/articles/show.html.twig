@@ -13,21 +13,35 @@
                     <img src="{{ asset('images/encrier.png') }}" alt="Encrier" id="encrier" />
                 </div>
                 <div class="col-md-8 col-sm-12 fond-paper">
-                    <a href="{{ path('journaux_show', {'id': article.journal.id}) }}">
+                    {% if previous %}
+                    <a href="{{ path('articles_show', {'id': previous.id}) }}">
                         <img src="{{ asset('images/fleche-retour.png') }}" alt="Jour précédent" class="icon-nav-gauche" />
                     </a>
-                    <a href="{{ path('journaux_show', {'id': article.journal.id}) }}">
+                    {% endif %}
+                    {% if next %}
+                    <a href="{{ path('articles_show', {'id': next.id}) }}">
                         <img src="{{ asset('images/fleche-suivant.png') }}" alt="Jour suivant" class="icon-nav-droite" />
                     </a>
+                    {% endif %}
                     <h2 class="text-center pt-4">
                         {{ trans_day_hash[article.jour|date('l')] }}
                         {{ article.jour ? article.jour|date('j') : '' }}
                         {{ trans_month_hash[article.jour|date('F')] }}
                         {{ article.jour ? article.jour|date('Y') : '' }}
                     </h2>
-                    <p class="text-article pt-3 pr-5 pl-5">
+                    <p class="text-article pt-3 pr-5 pl-5 pb-5">
                         {{ article.contenu |nl2br }}
                     </p>
+                    {% if previous %}
+                        <a href="{{ path('articles_show', {'id': previous.id}) }}">
+                            <img src="{{ asset('images/fleche-retour.png') }}" alt="Jour précédent" class="icon-nav-gauche-bas" />
+                        </a>
+                    {% endif %}
+                    {% if next %}
+                        <a href="{{ path('articles_show', {'id': next.id}) }}">
+                            <img src="{{ asset('images/fleche-suivant.png') }}" alt="Jour suivant" class="icon-nav-droite-bas" />
+                        </a>
+                    {% endif %}
                 </div>
                 <div class="col-md-2">
                     <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />

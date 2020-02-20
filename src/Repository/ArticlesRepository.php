@@ -19,6 +19,30 @@ class ArticlesRepository extends ServiceEntityRepository
         parent::__construct($registry, Articles::class);
     }
 
+    public function previous(Articles $article)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT u
+            FROM App:Articles u
+            WHERE u.jour = (SELECT MAX(us.jour) FROM App:Articles us WHERE us.jour < :jour )'
+            )
+            ->setParameter(':jour', $article->getJour())
+            ->getOneOrNullResult();
+    }
+
+    public function next(Articles $article)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT u
+            FROM App:Articles u
+            WHERE u.jour = (SELECT MIN(us.jour) FROM App:Articles us WHERE us.jour > :jour )'
+            )
+            ->setParameter(':jour', $article->getJour())
+            ->getOneOrNullResult();
+    }
+
     // /**
     //  * @return Articles[] Returns an array of Articles objects
     //  */
