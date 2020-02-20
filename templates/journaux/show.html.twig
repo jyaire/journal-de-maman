@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ journaux.titre }}{% endblock %}
+{% block title %}{{ journal.titre }}{% endblock %}
 
 {% block body %}
     <main class="journal">
-        <h1 class="p-3">{{ journaux.titre }}</h1>
+        <h1 class="p-3">{{ journal.titre }}</h1>
         <div class="bureau">
-            {% for article in journaux.articles%}
+            {% for article in journal.articles|sort((a, b) => a.jour <=> b.jour) %}
             {% include 'ephemeride.html.twig' %}
                 {% else %}
                     <h3>Aucune page de ce journal n'a été entrée.</h3>
@@ -14,10 +14,10 @@
         </div>
         <div class="row justify-content-end pr-5">
             {% if app.user %}
-                <a href="{{ path('articles_new', {'journal': journaux.id}) }}" class="btn btn-success mr-3">
+                <a href="{{ path('articles_new', {'journal': journal.id}) }}" class="btn btn-success mr-3">
                     Ajouter une page
                 </a>
-                <a href="{{ path('journaux_edit', {'id': journaux.id}) }}" class="btn btn-primary mr-3">
+                <a href="{{ path('journaux_edit', {'id': journal.id}) }}" class="btn btn-primary mr-3">
                     Editer les informations de ce journal
                 </a>
                 {% for role in app.user.roles %}
