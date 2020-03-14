@@ -42,23 +42,12 @@ class HomeController extends AbstractController
 
         // contributeurs
         $contribs = $users->findAll();
-        $totArticlesContribs = [];
-        foreach ($contribs as $contrib) {
-            $totArticles = $repoArticles->createQueryBuilder('a')
-                ->select('count(a.id)')
-                ->where('a.ajouteur = :contrib')
-                ->setParameter('contrib', $contrib)
-                ->getQuery()
-                ->getSingleScalarResult();
-            array_push($totArticlesContribs, $totArticles);
-        }
 
         return $this->render('index.html.twig', [
             'totalJournaux' => $totalJournaux,
             'totalArticles' => $totalArticles,
             'totalContribs' => $totalContribs,
             'contribs' => $contribs,
-            'totArticlesContribs' => $totArticlesContribs,
         ]);
     }
 }
