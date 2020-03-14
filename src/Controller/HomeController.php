@@ -23,13 +23,21 @@ class HomeController extends AbstractController
             ->getQuery()
             ->getSingleScalarResult();
         $repoArticles = $em->getRepository(Articles::class);
-        $totalArticles = $repoArticles->createQueryBuilder('j')
-            ->select('count(j.id)')
+        $totalArticles = $repoArticles->createQueryBuilder('a')
+            ->select('count(a.id)')
             ->getQuery()
             ->getSingleScalarResult();
+        $totalContribs = $repoArticles->createQueryBuilder('a')
+            ->select('count(distinct a.ajouteur)')
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        // contributeurs
+
         return $this->render('index.html.twig', [
             'totalJournaux' => $totalJournaux,
             'totalArticles' => $totalArticles,
+            'totalContribs' => $totalContribs,
         ]);
     }
 }
