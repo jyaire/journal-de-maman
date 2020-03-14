@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche - Le journal de Maman{% endblock %}
+
+{% block body %}
+    <main class="search">
+        <h1 class="p-3">Recherche</h1>
+        <div class="row">
+            <div class="offset-1 col-9">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn">{{ button_label|default('Chercher') }}</button>
+                {{ form_end(form) }}
+                <p class="text-presentation">
+                    Cherchez un terme dans les pages du journal.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-1 col-9">
+                {% if articles is defined %}
+                    {% for article in articles %}
+                        Page n°{{ article.id }}<br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
