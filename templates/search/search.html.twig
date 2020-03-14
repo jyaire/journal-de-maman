@@ -18,8 +18,11 @@
         <div class="row">
             <div class="offset-1 col-9">
                 {% if articles is defined %}
+                    "{{ search }}" apparaît sur ces pages :<br>
                     {% for article in articles %}
-                        Page n°{{ article.id }}<br>
+                        <a href="{{ path('articles_show', {id: article.id}) }}" alt="{{ article.jour|date('d/m/Y') }}">
+                            Page du {{ article.jour|date('d/m/Y') }}
+                        </a><br>
                     {% endfor %}
                 {% endif %}
             </div>
