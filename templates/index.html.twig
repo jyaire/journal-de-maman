@@ -36,8 +36,24 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title">Statistiques</h5>
-                        <p>{{ totalJournaux }} journaux</p>
-                        <p>{{ totalArticles }} pages</p>
+                        <p>{{ totalJournaux }} journaux<br>
+                        {{ totalArticles }} pages<br>
+                        {{ totalContribs }} contributeurs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 m-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Contributeurs</h5>
+
+                        {% for contrib in contribs %}
+                            {% if contrib.ajouts|length > 1 %}
+                                {{ contrib.firstname }} : {{ contrib.ajouts|length }} pages<br>
+                            {% elseif contrib.ajouts|length == 1 %}
+                                {{ contrib.firstname }} : {{ contrib.ajouts|length }} page<br>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>

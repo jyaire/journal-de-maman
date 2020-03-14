@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JournauxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JournauxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArticlesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArticlesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/journaux/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/journaux/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +57,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="likes: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -350,12 +354,12 @@
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
     <state x="1834" y="68" width="419" height="615" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1581775557504" />
-    <state x="452" y="291" width="914" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582037880651">
-      <screen x="0" y="27" width="2732" height="700" />
+    <state x="1815" y="290" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584198690700">
+      <screen x="1366" y="0" width="1366" height="768" />
     </state>
     <state x="449" y="291" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.700@0.27.1366.700" timestamp="1580761936072" />
     <state x="452" y="291" width="914" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.2732.700@0.27.2732.700" timestamp="1582037880651" />
-    <state x="1815" y="290" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1581514121479" />
+    <state x="1815" y="290" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1584198690700" />
     <state x="1867" y="424" width="501" height="700" key="refactoring.ChangeSignatureDialog" timestamp="1580895792474">
       <screen x="1440" y="397" width="1366" height="768" />
     </state>
