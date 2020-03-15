@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche - Le journal de Maman{% endblock %}
+
+{% block body %}
+    <main class="search">
+        <h1 class="p-3">Recherche</h1>
+        <div class="row">
+            <div class="offset-1 col-9">
+                {{ form_start(form) }}
+                {{ form_widget(form, {'attr': {'size':'30'}}) }}
+                <button class="btn btn-dark m-2">{{ button_label|default('Chercher') }}</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <div class="row p-4">
+            <div class="offset-1 col-9">
+                {% if articles is defined %}
+                    <h4>
+                    {% if articles is empty %}
+                        Aucun résultat pour cette recherche, essayez un autre terme.</h4>
+                    {% else %}
+                        "{{ search }}" apparaît sur ces pages :</h4><br>
+                        {% for article in articles %}
+                            <a href="{{ path('articles_show', {id: article.id}) }}" alt="{{ article.jour|date('d/m/Y') }}">
+                                {{ article.jour|date('d/m/Y') }}
+                            </a><br>
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

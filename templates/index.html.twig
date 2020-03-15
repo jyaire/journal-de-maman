@@ -42,6 +42,19 @@
                     </div>
                 </div>
             </div>
+            {% if app.user %}
+            {% if app.user.roles[0] == "ROLE_LECTOR" or app.user.roles[0] == "ROLE_ADMIN" %}
+                <div class="col-sm-3 m-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Trouver du contenu</h5>
+                            <p class="card-text">Recherche sur toutes les pages</p>
+                            <a href="{{ path('search') }}" class="btn btn-dark">Chercher</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% endif %}
             <div class="col-sm-3 m-3">
                 <div class="card text-center">
                     <div class="card-body">
