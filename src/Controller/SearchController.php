@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Articles;
 use App\Repository\ArticlesRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -15,9 +15,9 @@ class SearchController extends AbstractController
 {
     /**
      * @Route("/search", name="search")
+     * @IsGranted("ROLE_LECTOR")
      * @param Request $request
      * @param ArticlesRepository $articles
-     * @param $results
      * @return RedirectResponse|Response
      */
     public function search(Request $request, ArticlesRepository $articles)
