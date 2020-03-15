@@ -22,7 +22,6 @@ class SearchController extends AbstractController
      */
     public function search(Request $request, ArticlesRepository $articles)
     {
-        $search = '';
         $results = [];
         $form = $this->createForm(SearchType::class);
         $form->handleRequest($request);
@@ -30,11 +29,14 @@ class SearchController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $search = $form->getData();
             $results = $articles->searchInContent($search);
+            return $this->render('search/search.html.twig', [
+                'articles' => $results,
+                'search' => $search,
+                'form' => $form->createView(),
+            ]);
         }
 
         return $this->render('search/search.html.twig', [
-            'articles' => $results,
-            'search' => $search,
             'form' => $form->createView(),
         ]);
     }
