@@ -33,6 +33,11 @@ class Commentaires
      */
     private $datecom;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $com;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +75,18 @@ class Commentaires
     public function setDatecom(\DateTimeInterface $datecom): self
     {
         $this->datecom = $datecom;
+
+        return $this;
+    }
+
+    public function getCom(): ?string
+    {
+        return $this->com;
+    }
+
+    public function setCom(string $com): self
+    {
+        $this->com = $com;
 
         return $this;
     }

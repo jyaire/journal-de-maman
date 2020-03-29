@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Commentaires.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Commentaires.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +23,7 @@
     <option name="GROUP_DATA_SOURCES" value="true" />
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
+    <option name="SORT_POSITIONED" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
     <option name="HIDDEN_KINDS">
@@ -47,21 +50,7 @@
         <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="articles: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="likes: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="journaldemaman@localhost [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="journaldemaman: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="commentaires: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -210,7 +199,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -289,6 +278,8 @@
       <workItem from="1582219874474" duration="5380000" />
       <workItem from="1584214835746" duration="9368000" />
       <workItem from="1584265414171" duration="7354000" />
+      <workItem from="1584344189074" duration="917000" />
+      <workItem from="1585474163470" duration="5371000" />
     </task>
     <servers />
   </component>
@@ -300,10 +291,11 @@
       <screen x="1440" y="397" width="1366" height="768" />
     </state>
     <state x="1718" y="434" width="800" height="677" key="#Scopes/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580399268511" />
-    <state x="566" y="50" width="800" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580415613750">
-      <screen x="0" y="27" width="1366" height="700" />
+    <state x="1638" y="27" width="800" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585481242878">
+      <screen x="1366" y="0" width="1366" height="768" />
     </state>
     <state x="566" y="50" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.700@0.27.1366.700" timestamp="1580415613750" />
+    <state x="1638" y="27" width="800" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1585481242878" />
     <state x="1757" y="428" width="800" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580402812551" />
     <state x="366" y="113" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581244212282">
       <screen x="0" y="27" width="1366" height="700" />
@@ -334,18 +326,20 @@
       <screen x="0" y="27" width="1366" height="700" />
     </state>
     <state width="903" height="138" key="GridCell.Tab.0.right/0.27.1366.700@0.27.1366.700" timestamp="1580414487415" />
-    <state x="1700" y="435" width="1012" height="730" key="SettingsEditor" timestamp="1580316091821">
-      <screen x="1440" y="397" width="1366" height="768" />
+    <state x="1436" y="27" width="1012" height="730" key="SettingsEditor" timestamp="1585480792231">
+      <screen x="1366" y="0" width="1366" height="768" />
     </state>
+    <state x="1436" y="27" key="SettingsEditor/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1585480792231" />
     <state x="1700" y="435" width="1012" height="730" key="SettingsEditor/1440.397.1366.768/0.424.1440.476@1440.397.1366.768" timestamp="1580316091821" />
     <state x="1761" y="27" width="566" height="700" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1582035117672">
       <screen x="0" y="27" width="2732" height="700" />
     </state>
     <state x="1761" y="27" width="566" height="700" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.2732.700@0.27.2732.700" timestamp="1582035117672" />
-    <state x="1709" y="242" key="com.intellij.ide.util.TipDialog" timestamp="1584265620598">
-      <screen x="1366" y="0" width="1366" height="768" />
+    <state x="675" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1584344335115">
+      <screen x="0" y="27" width="2732" height="700" />
     </state>
     <state x="343" y="248" key="com.intellij.ide.util.TipDialog/0.27.1366.700@0.27.1366.700" timestamp="1582219938185" />
+    <state x="675" y="248" key="com.intellij.ide.util.TipDialog/0.27.2732.700@0.27.2732.700" timestamp="1584344335115" />
     <state x="1361" y="510" key="com.intellij.ide.util.TipDialog/0.334.2390.700@0.334.2390.700" timestamp="1578989533730" />
     <state x="343" y="248" key="com.intellij.ide.util.TipDialog/1366.0.1366.768/0.27.1366.700@0.27.1366.700" timestamp="1581750738336" />
     <state x="1709" y="242" key="com.intellij.ide.util.TipDialog/1366.0.1366.768/0.27.1366.700@1366.0.1366.768" timestamp="1584265620598" />
