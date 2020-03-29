@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Articles;
+use App\Entity\Commentaires;
 use App\Entity\Likes;
 use App\Entity\User;
 use App\Form\ArticlesType;
+use App\Form\CommentairesType;
 use App\Repository\ArticlesRepository;
 use App\Repository\JournauxRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -89,14 +91,19 @@ class ArticlesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="articles_show", methods={"GET"})
+     * @Route("/{id}", name="articles_show", methods={"GET", "POST"})
      * @IsGranted("ROLE_LECTOR")
      * @param Articles $article
+     * @param ArticlesRepository $articles
+     * @param Request $request
      * @return Response
      * @throws \Exception
      */
-    public function show(Articles $article, ArticlesRepository $articles): Response
-    {
+    public function show(
+        Articles $article,
+        ArticlesRepository $articles,
+        Request $request
+    ): Response {
         if (isset($_GET['fav'])) {
             $entityManager = $this->getDoctrine()->getManager();
             if ($_GET['fav'] == true) {
@@ -141,13 +148,34 @@ class ArticlesController extends AbstractController
 
         // cherche l'article précédent et suivant
         $previous = $articles->previous($article);
-            $next = $articles->next($article);
+        $next = $articles->next($article);
+
+        // ajout du formulaire des commentaires
+
+        $commentaire = new Commentaires();
+        $form = $this->createForm(CommentairesType::class, $commentaire);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $commentaire->setDatecom(new DateTime('now'))->setAuteurcom($this->getUser())->setArticle($article);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($commentaire);
+            $entityManager->flush();
+
+            $message = "Votre commentaire a été posté !";
+            $this->addFlash('success', $message);
+
+            return $this->redirectToRoute('articles_show', [
+            'id' => $article->getId(),
+            ]);
+        }
 
         return $this->render('articles/show.html.twig', [
             'article' => $article,
             'coeur' => $coeur,
             'previous' => $previous,
             'next' => $next,
+            'form' => $form->createView(),
         ]);
     }
 

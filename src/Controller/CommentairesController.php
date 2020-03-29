@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Commentaires;
 use App\Form\CommentairesType;
 use App\Repository\CommentairesRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,7 @@ class CommentairesController extends AbstractController
 {
     /**
      * @Route("/", name="commentaires_index", methods={"GET"})
+     * @IsGranted("ROLE_LECTOR")
      */
     public function index(CommentairesRepository $comRepository): Response
     {
@@ -27,6 +29,7 @@ class CommentairesController extends AbstractController
 
     /**
      * @Route("/new", name="commentaires_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_LECTOR")
      */
     public function new(Request $request): Response
     {
@@ -50,6 +53,7 @@ class CommentairesController extends AbstractController
 
     /**
      * @Route("/{id}", name="commentaires_show", methods={"GET"})
+     * @IsGranted("ROLE_LECTOR")
      */
     public function show(Commentaires $commentaire): Response
     {
@@ -60,6 +64,7 @@ class CommentairesController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="commentaires_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_LECTOR")
      */
     public function edit(Request $request, Commentaires $commentaire): Response
     {
@@ -80,6 +85,7 @@ class CommentairesController extends AbstractController
 
     /**
      * @Route("/{id}", name="commentaires_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_LECTOR")
      */
     public function delete(Request $request, Commentaires $commentaire): Response
     {

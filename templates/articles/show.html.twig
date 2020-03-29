@@ -92,18 +92,17 @@
                 <div class="col-md-2">
                 </div>
             </div>
-            <div class="row border p-3">
+            <div class="row border-top border-secondary p-3">
                 <div class="col-md-2">
                     Commentaires
                 </div>
-                <div class="col-md-8 fond-paper p-2">
+                <div class="col-md-8 pl-2 pt-2">
                     {% for commentaire in article.commentaires %}
-                        <p class="text-secondary">
+                        <div class="pl-3 pr-3 fond-paper">
                             Message de {{ commentaire.auteurcom.firstname }} écrit le {{ commentaire.datecom|date("d/m/Y") }}
-                        </p>
-                        <p class="text-article">{{ commentaire.com }}</p>
-                    {% else %}
-                        Aucun commentaire sur cette page, ajoutez-en un !
+                        <p class="text-article p-4">{{ commentaire.com|nl2br }}</p>
+                            {{ include('commentaires/_delete_form.html.twig') }}
+                        </div>
                     {% endfor %}
                 </div>
                 <div class="col-md-2">
@@ -114,6 +113,10 @@
                 </div>
                 <div class="col-md-8">
                     Ajouter un commentaire :
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button class="btn">{{ button_label|default('Poster') }}</button>
+                    {{ form_end(form) }}
                 </div>
                 <div class="col-md-2">
                 </div>
