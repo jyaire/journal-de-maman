@@ -43,7 +43,14 @@
                         </a>
                     {% endif %}
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 p-3">
+                    {% if app.user %}
+                        {% for com in article.commentaires %}
+                            {% if loop.first %}
+                                <a href="#com">{{ loop.length }} commentaire(s)</a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                     <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />
                     {% if app.user %}
                     <a href="{{ path('articles_edit', {'id': article.id}) }}" class="btn btn-dark mt-3">
@@ -93,17 +100,27 @@
                 </div>
             </div>
             <div class="row border-top border-secondary p-3">
-                <div class="col-md-2">
+                <div class="col-md-2" id="com">
                     Commentaires
                 </div>
                 <div class="col-md-8 pl-2 pt-2">
                     {% for commentaire in article.commentaires %}
-                        <div class="pl-3 pr-3 fond-paper">
+                        <div class="pl-3 pr-3 fond-paper m-2">
                             Message de {{ commentaire.auteurcom.firstname }} écrit le {{ commentaire.datecom|date("d/m/Y") }}
-                        <p class="text-article p-4">{{ commentaire.com|nl2br }}</p>
+                        <p class="text-article pt-3">{{ commentaire.com|nl2br }}
+                            {% if app.user.roles[0] == "ROLE_ADMIN" %}
                             {{ include('commentaires/_delete_form.html.twig') }}
+                            {% endif %}
+                        </p>
                         </div>
                     {% endfor %}
+                    <div class="pl-2 pr-2">
+                    Ajouter un commentaire :
+                    {{ form_start(form) }}
+                    {{ form_widget(form.com, {'attr': {'class': 'com'}}) }}
+                    <button class="btn btn-success">{{ button_label|default('Poster') }}</button>
+                    {{ form_end(form) }}
+                    </div>
                 </div>
                 <div class="col-md-2">
                 </div>
@@ -112,11 +129,6 @@
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
-                    Ajouter un commentaire :
-                    {{ form_start(form) }}
-                    {{ form_widget(form) }}
-                    <button class="btn">{{ button_label|default('Poster') }}</button>
-                    {{ form_end(form) }}
                 </div>
                 <div class="col-md-2">
                 </div>

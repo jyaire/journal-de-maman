@@ -86,6 +86,9 @@ class CommentairesController extends AbstractController
     /**
      * @Route("/{id}", name="commentaires_delete", methods={"DELETE"})
      * @IsGranted("ROLE_LECTOR")
+     * @param Request $request
+     * @param Commentaires $commentaire
+     * @return Response
      */
     public function delete(Request $request, Commentaires $commentaire): Response
     {
@@ -93,8 +96,12 @@ class CommentairesController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($commentaire);
             $entityManager->flush();
+            $message = "Le commentaire a été supprimé !";
+            $this->addFlash('success', $message);
         }
 
-        return $this->redirectToRoute('commentaires_index');
+        return $this->redirectToRoute('articles_show', [
+            'id' => $commentaire->getArticle()->getId(),
+        ]);
     }
 }
