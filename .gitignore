@@ -28,4 +28,6 @@ yarn-error.log
 /phpcs.xml
 ###< squizlabs/php_codesniffer ###
 
-/.idea/workspace.xml
+###> jetbrain/phpstorm ###
+/.idea/
+###< jetbrain/phpstorm ###
