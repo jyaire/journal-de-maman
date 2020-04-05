@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8e2aff7-f8b9-48f7-b30a-b8ddca7aae6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/journaux/pdf.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/le-journal-de-maman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/le-journal-de-maman.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JournauxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JournauxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/journaux/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/journaux/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/journaux/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/journaux/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -294,7 +292,7 @@
       <workItem from="1584344189074" duration="917000" />
       <workItem from="1585474163470" duration="12899000" />
       <workItem from="1585550784973" duration="45000" />
-      <workItem from="1586083524226" duration="3991000" />
+      <workItem from="1586083524226" duration="4896000" />
     </task>
     <servers />
   </component>
