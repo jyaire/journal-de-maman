@@ -66,6 +66,7 @@ class JournauxController extends AbstractController
 
     /**
      * @Route("/pdf/{id}", name="journal_pdf", methods={"GET"})
+     * @IsGranted("ROLE_LECTOR")
      * @param Journaux $journal
      * @return Response
      */
