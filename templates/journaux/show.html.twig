@@ -6,7 +6,7 @@
     <main class="journal">
         <div class="row">
             <div class="col-3 p-3">
-                <a href="{{ path('journaux_index', {id:journal.id}) }}" alt="Télécharger ce journal" class="btn btn-info m-2">
+                <a href="{{ path('journaux_index', {id:journal.id}) }}" alt="Liste des journaux" class="btn btn-info m-2">
                     Liste des journaux
                 </a>
             </div>
@@ -14,9 +14,15 @@
                 <h1 class="p-3">{{ journal.titre }}</h1>
             </div>
             <div class="col-3 p-3 text-right">
-                <a href="{{ path('journal_pdf', {id:journal.id}) }}" alt="Télécharger ce journal" class="btn btn-warning m-2">
-                    Télécharger ce journal en PDF
-                </a>
+                {% if app.user %}
+                    {% for role in app.user.roles %}
+                        {% if role == 'ROLE_LECTOR' %}
+                            <a href="{{ path('journal_pdf', {id:journal.id}) }}" alt="Télécharger ce journal" class="btn btn-warning m-2">
+                                Télécharger ce journal en PDF
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
 
