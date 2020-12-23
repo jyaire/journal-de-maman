@@ -1,9 +1,11 @@
-<h1>Hi!</h1>
+<h1>Le Journal de Maman - mot de passe oublié</h1>
 
-<p>To reset your password, please visit the following link</p>
+<p>Pour réinitialiser votre mot de passe, merci de cliquer sur ce lien :</p>
 
 <a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
 
-<p>This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+<p>Ce lien est valide {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }} (donc hurry up!).</p>
 
-<p>Cheers!</p>
+<p>A bientôt !</p>
+
+<p>Le Journal de Maman</p>
