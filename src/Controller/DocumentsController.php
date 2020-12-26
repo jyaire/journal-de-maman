@@ -106,13 +106,22 @@ class DocumentsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="documents_show", methods={"GET"})
+     * @Route("/{id}/{pdf}", name="documents_show", methods={"GET"},  defaults={"pdf": null})
+     * @param Documents $document
+     * @param ?string $pdf
      */
-    public function show(Documents $document): Response
+    public function show(Documents $document, ?string $pdf): Response
     {
-        return $this->render('documents/show.html.twig', [
-            'document' => $document,
-        ]);
+        if ($pdf == null) {
+            return $this->render('documents/show.html.twig', [
+                'document' => $document,
+                'pdf' => $pdf,
+            ]);
+        } 
+        else {
+            return $this->file('documents/'. $document->getFile());
+        }
+        
     }
 
     /**

@@ -33,9 +33,24 @@
                         {{ article.contenu |nl2br }}
                     </p>
                     <div class="row justify-content-center">
-                            {% for document in article.documents %}
-                                <img src="{{ asset('documents/' ~ document.file) }}" alt="Jour précédent" class="miniature" />
-                            {% endfor %}
+                        {% for document in article.documents %}
+                                {% set pdf = false %}
+                                {% set extensions = document.file | split('.', 2)%}
+                                {% for extension in extensions %}
+                                    {% if extension == "pdf" %}
+                                        {% set pdf = true %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if pdf == true %}
+                                    <a href="{{ path('documents_show', {'id': document.id, 'pdf': 'pdf'}) }}">
+                                        <img src="{{ asset('images/pdf.png') }}" alt="Document du journal" class="miniature" />
+                                    </a>
+                                {% else %}
+                                    <a href="{{ path('documents_show', {'id': document.id}) }}">
+                                        <img src="{{ asset('documents/' ~ document.file) }}" alt="Document du journal" class="miniature" />
+                                    </a>
+                                {% endif %}
+                        {% endfor %}
                     </div>
                     {% if previous %}
                         <a href="{{ path('articles_show', {'id': previous.id}) }}">
