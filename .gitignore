@@ -31,3 +31,7 @@ yarn-error.log
 ###> jetbrain/phpstorm ###
 /.idea/
 ###< jetbrain/phpstorm ###
+
+###> User files ###
+/public/documents/*
+###< User files ###

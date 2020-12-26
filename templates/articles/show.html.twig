@@ -32,6 +32,9 @@
                     <p class="text-article pt-3 pr-5 pl-5 pb-5">
                         {{ article.contenu |nl2br }}
                     </p>
+                    {% for document in article.documents %}
+                        {{ article.file }}
+                    {% endfor %}
                     {% if previous %}
                         <a href="{{ path('articles_show', {'id': previous.id}) }}">
                             <img src="{{ asset('images/fleche-retour.png') }}" alt="Jour précédent" class="icon-nav-gauche-bas" />

@@ -13,7 +13,7 @@ class DocumentsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('file', FileType::class, [
+            ->add('files', FileType::class, [
                 'multiple' => true,
                 'label' => null,
                 'attr' => ['class' => 'text-presentation'],
@@ -24,7 +24,6 @@ class DocumentsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Documents::class,
         ]);
     }
 }
