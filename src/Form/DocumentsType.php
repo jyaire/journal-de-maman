@@ -17,8 +17,7 @@ class DocumentsType extends AbstractType
                 'multiple' => true,
                 'label' => null,
                 'attr' => ['class' => 'text-presentation'],
-            ])
-        ;
+                ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

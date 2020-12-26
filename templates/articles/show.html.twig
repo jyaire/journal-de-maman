@@ -32,9 +32,11 @@
                     <p class="text-article pt-3 pr-5 pl-5 pb-5">
                         {{ article.contenu |nl2br }}
                     </p>
-                    {% for document in article.documents %}
-                        {{ article.file }}
-                    {% endfor %}
+                    <div class="row justify-content-center">
+                            {% for document in article.documents %}
+                                <img src="{{ asset('documents/' ~ document.file) }}" alt="Jour précédent" class="miniature" />
+                            {% endfor %}
+                    </div>
                     {% if previous %}
                         <a href="{{ path('articles_show', {'id': previous.id}) }}">
                             <img src="{{ asset('images/fleche-retour.png') }}" alt="Jour précédent" class="icon-nav-gauche-bas" />
@@ -56,6 +58,9 @@
                     {% endif %}
                     <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />
                     {% if app.user %}
+                    <a href="{{ path('documents_new', {'article': article.id}) }}" class="btn btn-success mt-3">
+                        Attacher des documents
+                    </a><br>
                     <a href="{{ path('articles_edit', {'id': article.id}) }}" class="btn btn-dark mt-3">
                         Modifier le texte
                     </a>

@@ -234,6 +234,13 @@ body {
         right: 20px;
     }
 
+    .miniature {
+        margin: 3px;
+        height: 200px;
+        width: auto;
+        border: solid 2px black;
+    }
+
     .fond-paper {
     background-image:url('../../public/images/paperwhite.jpg');
     -moz-box-shadow: 3px -3px 20px 5px #656565;

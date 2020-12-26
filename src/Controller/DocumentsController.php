@@ -53,15 +53,18 @@ class DocumentsController extends AbstractController
             foreach($files as $file) {
                 $extension = $file->guessExtension();
                 if ($file->getSize() > 10000000 ) {
+
                     $message = "Echec ! Chaque fichier doit peser moins de 10 Mo";
                     $this->addFlash('danger', $message);
-                    return $this->render('documents/new.html.twig', [
+
+                    return $this->redirectToRoute('documents/new.html.twig', [
                         'article' => $article,
                         'form' => $form->createView(),
                     ]);
                 }
                 if ($extension == 'jpg' or $extension == 'jpeg' or $extension == 'png' or $extension == 'pdf') {
-                    $fileName = 'journal-' . $article->getId() . '-' . date('YmdHis') . '.' . $extension;
+                    $uniqId = uniqid();
+                    $fileName = 'journal-' . $article->getId() . '-' . date('YmdHis') . '-' . $uniqId . '.' . $extension;
                     try {
                         $file->move($directory, $fileName);
                     } catch (FileException $e) {
@@ -87,7 +90,7 @@ class DocumentsController extends AbstractController
                 $quantity++;
             }
             
-            //$entityManager->flush();
+            $entityManager->flush();
 
             $message = $quantity . " document(s) mis en ligne";
             $this->addFlash('success', $message);
