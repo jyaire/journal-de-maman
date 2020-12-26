@@ -82,6 +82,11 @@ class User implements UserInterface
      */
     private $likes;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Documents::class, mappedBy="poster")
+     */
+    private $documents;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -89,6 +94,7 @@ class User implements UserInterface
         $this->modifications = new ArrayCollection();
         $this->commentaires = new ArrayCollection();
         $this->likes = new ArrayCollection();
+        $this->documents = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -366,6 +372,36 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($like->getAuteurlike() === $this) {
                 $like->setAuteurlike(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Documents[]
+     */
+    public function getDocuments(): Collection
+    {
+        return $this->documents;
+    }
+
+    public function addDocument(Documents $document): self
+    {
+        if (!$this->documents->contains($document)) {
+            $this->documents[] = $document;
+            $document->setPoster($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDocument(Documents $document): self
+    {
+        if ($this->documents->removeElement($document)) {
+            // set the owning side to null (unless already changed)
+            if ($document->getPoster() === $this) {
+                $document->setPoster(null);
             }
         }
 
