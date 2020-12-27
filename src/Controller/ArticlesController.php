@@ -169,7 +169,6 @@ class ArticlesController extends AbstractController
             'id' => $article->getId(),
             ]);
         }
-
         return $this->render('articles/show.html.twig', [
             'article' => $article,
             'coeur' => $coeur,
