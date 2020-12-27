@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Articles;
 use App\Entity\Journaux;
-use App\Entity\User;
+use App\Entity\Documents;
 use App\Repository\UserRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -39,6 +39,11 @@ class HomeController extends AbstractController
             ->select('count(distinct a.ajouteur)')
             ->getQuery()
             ->getSingleScalarResult();
+        $repoDocuments = $em->getRepository(Documents::class);
+        $totalDocs = $repoDocuments->createQueryBuilder('d')
+            ->select('count(distinct d.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
 
         // contributeurs
         $contribs = $users->findAll();
@@ -47,6 +52,7 @@ class HomeController extends AbstractController
             'totalJournaux' => $totalJournaux,
             'totalArticles' => $totalArticles,
             'totalContribs' => $totalContribs,
+            'totalDocs' => $totalDocs,
             'contribs' => $contribs,
         ]);
     }
