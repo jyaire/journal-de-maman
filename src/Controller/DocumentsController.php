@@ -150,11 +150,23 @@ class DocumentsController extends AbstractController
     public function delete(Request $request, Documents $document): Response
     {
         if ($this->isCsrfTokenValid('delete'.$document->getId(), $request->request->get('_token'))) {
+            
+            // delete file in dir
+            $fichier = "documents/" . $document->getFile();
+            if( file_exists ($fichier))
+                unlink( $fichier ) ;
+
+            // delete document in DB
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($document);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('documents_index');
+        $message = "Document supprimé";
+        $this->addFlash('success', $message);
+
+        return $this->redirectToRoute('articles_show', [
+            'id' => $document->getArticle()->getId(),
+        ]);
     }
 }

@@ -178,19 +178,6 @@ class ArticlesController extends AbstractController
         ]);
     }
 
-//    /**
-//     * @Route("/random", name="random_article")
-//     * @param Articles $article
- //    * @return RedirectResponse
-//     */
-//    public function getRandomArticle(Articles $article)
-//    {
-//        $id = $article->getId();
-//       return $this->redirectToRoute('articles_show', [
-//           'id' => $id,
-//       ]);
-//    }
-
     /**
      * @Route("/{id}/edit", name="articles_edit", methods={"GET","POST"})
      * @IsGranted("ROLE_LECTOR")
