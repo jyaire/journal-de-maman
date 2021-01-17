@@ -7,7 +7,7 @@
     <h1 class="m-3">Les documents en ligne</h1>
         <div class="row justify-content-left m-2">
     
-            {% for document in documents %}
+            {% for document in documents | sort((a, b) => a.article.jour <=> b.article.jour) %}
                 <div class="text-center">
                     {% set extension = document.file|split('.')|last %}
                     {% if extension == "pdf" %}
