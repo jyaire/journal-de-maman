@@ -32,7 +32,7 @@
                     <p class="text-article pt-3 pr-5 pl-5 pb-5">
                         {{ article.contenu |nl2br }}
                     </p>
-                    <div class="row justify-content-center mb-5">
+                    <div class="row justify-content-center mb-5" id="documents">
                         {% for document in article.documents %}
                                 {% set extension = document.file|split('.')|last %}
                                 {% if extension == "pdf" %}
@@ -59,9 +59,14 @@
                 </div>
                 <div class="col-md-2 p-3">
                     {% if app.user %}
+                        {% for doc in article.documents %}
+                            {% if loop.first %}
+                                <a href="#documents">{{ loop.length }} document(s)</a>
+                            {% endif %}
+                        {% endfor %}
                         {% for com in article.commentaires %}
                             {% if loop.first %}
-                                <a href="#com">{{ loop.length }} commentaire(s)</a>
+                                <br><a href="#com">{{ loop.length }} commentaire(s)</a>
                             {% endif %}
                         {% endfor %}
                     {% endif %}
