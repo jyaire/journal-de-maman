@@ -34,14 +34,8 @@
                     </p>
                     <div class="row justify-content-center mb-5">
                         {% for document in article.documents %}
-                                {% set pdf = false %}
-                                {% set extensions = document.file | split('.', 2)%}
-                                {% for extension in extensions %}
-                                    {% if extension == "pdf" %}
-                                        {% set pdf = true %}
-                                    {% endif %}
-                                {% endfor %}
-                                {% if pdf == true %}
+                                {% set extension = document.file|split('.')|last %}
+                                {% if extension == "pdf" %}
                                     <a href="{{ path('documents_show', {'id': document.id, 'pdf': 'pdf'}) }}">
                                         <img src="{{ asset('images/pdf.png') }}" alt="Document du journal" class="miniature" />
                                     </a>

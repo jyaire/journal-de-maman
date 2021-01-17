@@ -6,16 +6,20 @@
     <main class="article p-3">
         <div class="row justify-content-center">
             <div class="col-12 text-center">
-                <h1>Photos ou PDF - page du 
+                <h1>Photos pour le 
                         {{ trans_day_hash[article.jour|date('l')] }}
                         {{ article.jour ? article.jour|date('j') : '' }}
                         {{ trans_month_hash[article.jour|date('F')] }}
                         {{ article.jour ? article.jour|date('Y') : '' }}</h1>
-                <p class="text-presentation">Choisissez un ou plusieurs documents (maintenir appuyé sur CTRL pour sélectionner plusieurs fichiers)</p>
+                <p class="text-presentation">
+                    Choisissez une ou plusieurs photos 
+                    (maintenir appuyé sur CTRL pour sélectionner plusieurs fichiers)<br>
+                </p>
 
                     {{ include('documents/_form.html.twig') }}
 
-                <p>Formats acceptés :<br>
+                <p>
+                Formats acceptés (<10Mo) :<br>
                 - images : jpg, jpeg, png<br>
                 - documents : PDF</p>
             </div>

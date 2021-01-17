@@ -125,26 +125,6 @@ class DocumentsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="documents_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Documents $document): Response
-    {
-        $form = $this->createForm(DocumentsType::class, $document);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('documents_index');
-        }
-
-        return $this->render('documents/edit.html.twig', [
-            'document' => $document,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
      * @Route("/{id}", name="documents_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Documents $document): Response

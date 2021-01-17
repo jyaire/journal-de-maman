@@ -1,40 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Documents index{% endblock %}
+{% block title %}Journal de Maman - Les documents{% endblock %}
 
 {% block body %}
-    <h1>Documents index</h1>
+    <div class="col-12">
+    <h1 class="m-3">Les documents en ligne</h1>
+        <div class="row justify-content-left m-2">
+    
+            {% for document in documents %}
+                <div class="text-center">
+                    {% set extension = document.file|split('.')|last %}
+                    {% if extension == "pdf" %}
+                        <a href="{{ path('documents_show', {'id': document.id, 'pdf': 'pdf'}) }}">
+                            <img src="{{ asset('images/pdf.png') }}" alt="Document du journal" class="miniature" />
+                        </a>
+                    {% else %}
+                        <a href="{{ path('documents_show', {'id': document.id}) }}">
+                            <img src="{{ asset('documents/' ~ document.file) }}" alt="Document du journal" class="miniature" />
+                        </a>
+                    {% endif %}
+                    
+                    <br>
+                    {{ document.article.jour ? document.article.jour|date('d/m/Y') : '' }}<br>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>File</th>
-                <th>Article</th>
-                <th>Date</th>
-                <th>Poster</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for document in documents %}
-            <tr>
-                <td>{{ document.id }}</td>
-                <td>{{ document.file }}</td>
-                <td>{{ document.article.id }}</td>
-                <td>{{ document.date ? document.date|date('Y-m-d H:i:s T') : '' }}</td>
-                <td>{{ document.poster.id }}</td>
-                <td>
-                    <a href="{{ path('documents_show', {'id': document.id}) }}">show</a>
-                    <a href="{{ path('documents_edit', {'id': document.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
+                </div>
+            {% else %}
+                <p>Aucun document actuellement</p>
+            {% endfor %}
+            
+        </div>
+    </div>
 {% endblock %}
