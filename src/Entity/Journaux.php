@@ -38,6 +38,11 @@ class Journaux
      */
     private $articles;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $couleur;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -122,5 +127,17 @@ class Journaux
     public function __toString()
     {
         return $this->getTitre();
+    }
+
+    public function getCouleur(): ?string
+    {
+        return $this->couleur;
+    }
+
+    public function setCouleur(?string $couleur): self
+    {
+        $this->couleur = $couleur;
+
+        return $this;
     }
 }

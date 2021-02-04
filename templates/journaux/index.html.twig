@@ -8,24 +8,18 @@
         <div class="bureau">
             {% set n = 1 %}
             {% for journaux in journauxes %}
-                {% set color = {
-                    "1": "vert",
-                    "2": "rouge",
-                    "3": "noir",
-                    "4": "bleu",
-                } %}
                 <a href="{{ path('journaux_show', {id: journaux.id}) }}" title="{{ journaux.titre }}">
-                <div class="carnet-{{ color[n] }} text-center p-1 pt-3 m-4">
+                {% if journaux.couleur == null %}
+                    <div class="carnet-noir text-center p-1 pt-3 m-4">
+                {% else %}
+                    <div class="carnet-{{ color[n] }} text-center p-1 pt-3 m-4">
+                {% endif %}
                     <p>JOURNAL<br>
                         {{ journaux.titre }}</p><br>
                     <p>du {{ journaux.datedebut ? journaux.datedebut|date('d/m/Y') : '' }}<br>
                         au {{ journaux.datefin ? journaux.datefin|date('d/m/Y') : '' }}</p>
                 </div>
                 </a>
-                {% set n = n + 1 %}
-                {% if n > 4 %}
-                    {% set n = 1 %}
-                {%  endif %}
             {% endfor %}
         </div>
         <div class="text-right p-3">
