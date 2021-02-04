@@ -25,6 +25,14 @@
 </div>
 <div class="row p-3">
     <div class="offset-2 col-3 text-right marker">
+        {{ form_label(form.couleur) }}
+    </div>
+    <div class="col-5 lead">
+        {{ form_widget(form.couleur) }}
+    </div>
+</div>
+<div class="row p-3">
+    <div class="offset-2 col-3 text-right marker">
     </div>
     <div class="col-5 lead">
         <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>

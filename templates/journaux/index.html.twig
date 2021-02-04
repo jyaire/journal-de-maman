@@ -12,7 +12,7 @@
                 {% if journaux.couleur == null %}
                     <div class="carnet-noir text-center p-1 pt-3 m-4">
                 {% else %}
-                    <div class="carnet-{{ color[n] }} text-center p-1 pt-3 m-4">
+                    <div class="carnet-{{ journaux.couleur }} text-center p-1 pt-3 m-4">
                 {% endif %}
                     <p>JOURNAL<br>
                         {{ journaux.titre }}</p><br>

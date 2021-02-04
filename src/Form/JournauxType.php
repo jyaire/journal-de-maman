@@ -16,10 +16,13 @@ class JournauxType extends AbstractType
             ->add('titre')
             ->add('datedebut', DateType::class, [
                 'widget' => 'single_text',
+                'label' => 'Jour de début',
             ])
             ->add('datefin', DateType::class, [
                 'widget' => 'single_text',
+                'label' => 'Jour de fin',
             ])
+            ->add('couleur')
         ;
     }
 
