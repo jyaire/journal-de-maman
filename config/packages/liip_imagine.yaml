@@ -3,7 +3,7 @@ liip_imagine:
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
     filter_sets: # Contient la liste des filtres
-        carre: # Nom du filtre
+        square: # Nom du filtre
             quality: 75 # Qualité de l'image
             filters: # Liste des filtres à appliquer
                 thumbnail: # Filtre "Thumbnail"

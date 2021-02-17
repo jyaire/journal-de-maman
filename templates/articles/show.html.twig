@@ -41,7 +41,7 @@
                                     </a>
                                 {% else %}
                                     <a href="{{ path('documents_show', {'id': document.id}) }}">
-                                        <img src="{{ asset('documents/' ~ document.file) |imagine_filter('reduc') }}" alt="Document du journal" class="miniature" />
+                                        <img src="{{ asset('documents/' ~ document.file) |imagine_filter('square') }}" alt="Document du journal" class="miniature" />
                                     </a>
                                 {% endif %}
                         {% endfor %}
