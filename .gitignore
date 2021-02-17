@@ -35,3 +35,6 @@ yarn-error.log
 ###> User files ###
 /public/documents/*
 ###< User files ###
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###
