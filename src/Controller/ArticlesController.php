@@ -42,10 +42,11 @@ class ArticlesController extends AbstractController
      * @IsGranted("ROLE_LECTOR")
      * @param Request $request
      * @param JournauxRepository $journaux
+     * @param ArticlesRepository $articlesRepository
      * @return Response
      * @throws \Exception
      */
-    public function new(Request $request, JournauxRepository $journaux): Response
+    public function new(Request $request, JournauxRepository $journaux, ArticlesRepository $articlesRepository): Response
     {
         $article = new Articles();
 
@@ -70,6 +71,19 @@ class ArticlesController extends AbstractController
             $journal = $article->getJournal();
             $article->setAjouteur($this->getUser())->setAjoutdate(new DateTime('now'));
             $date = $article->getJour()->format('d/m/Y');
+
+            // si cette page existe déjà, refuser l'ajout
+            $result = $articlesRepository->findOneBy(['jour' => $article->getJour()]);
+            if($result != null) {
+                $message = 'La page du ' . $date . ' existe déjà ! Utilisez "retour" pour modifier la date';
+                $this->addFlash('danger', $message);
+
+                return $this->redirectToRoute('articles_new', [
+                    'journal' => $idjournal,
+                ]);
+            }
+
+            // sinon ajouter l'article
             $entityManager->persist($article);
             $entityManager->flush();
 
