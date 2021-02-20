@@ -72,17 +72,15 @@
                     {% endif %}
                     <img src="{{ asset('images/porte-plume.png') }}" alt="Porte-Plume" id="porteplume" />
                     {% if app.user %}
-                    <a href="{{ path('documents_new', {'article': article.id}) }}" class="btn btn-success mt-3">
-                        Attacher des documents
-                    </a><br>
-                    <a href="{{ path('articles_edit', {'id': article.id}) }}" class="btn btn-dark mt-3">
-                        Modifier le texte
-                    </a>
-                        {% for role in app.user.roles %}
-                            {% if role == 'ROLE_ADMIN' %}
-                                {{ include('articles/_delete_form.html.twig') }}
-                            {% endif %}
-                        {% endfor %}
+                        <a href="{{ path('documents_new', {'article': article.id}) }}" class="btn btn-success mt-3">
+                            Attacher des documents
+                        </a><br>
+                        <a href="{{ path('articles_edit', {'id': article.id}) }}" class="btn btn-dark mt-3">
+                            Modifier le texte
+                        </a>
+                        {% if is_granted('ROLE_ADMIN') or article.ajouteur == app.user %}
+                            {{ include('articles/_delete_form.html.twig') }}
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>

@@ -211,7 +211,7 @@ class ArticlesController extends AbstractController
 
     /**
      * @Route("/{id}", name="articles_delete", methods={"DELETE"})
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_LECTOR")
      * @param Request $request
      * @param Articles $article
      * @return Response
