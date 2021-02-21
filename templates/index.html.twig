@@ -74,29 +74,33 @@
                 {% endif %}
             {% endif %}
 
-            <div class="col-sm-3 m-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Contributeurs</h5>
+            {% if app.user %}
+                {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
+                    <div class="col-sm-3 m-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Contributeurs</h5>
 
-                        {% for contrib in contribs %}
-                            {% if contrib.ajouts|length > 1 %}
-                                {{ contrib.firstname }} : {{ contrib.ajouts|length }} pages
-                            {% elseif contrib.ajouts|length == 1 %}
-                                {{ contrib.firstname }} : {{ contrib.ajouts|length }} page
-                            {% endif %}
-                            {% if contrib.documents|length > 1 %}
-                                 - {{ contrib.documents|length }} docs<br>
-                            {% elseif contrib.documents|length == 1 %}
-                                 - {{ contrib.documents|length }} doc<br>
-                            {% endif %}
-                            {% if contrib.ajouts|length > 1 and contrib.documents|length == 0 %}
-                                <br>
-                            {% endif %}
-                        {% endfor %}
+                                {% for contrib in contribs %}
+                                    {% if contrib.ajouts|length > 1 %}
+                                        {{ contrib.firstname }} : {{ contrib.ajouts|length }} pages
+                                    {% elseif contrib.ajouts|length == 1 %}
+                                        {{ contrib.firstname }} : {{ contrib.ajouts|length }} page
+                                    {% endif %}
+                                    {% if contrib.documents|length > 1 %}
+                                        - {{ contrib.documents|length }} docs<br>
+                                    {% elseif contrib.documents|length == 1 %}
+                                        - {{ contrib.documents|length }} doc<br>
+                                    {% endif %}
+                                    {% if contrib.ajouts|length > 1 and contrib.documents|length == 0 %}
+                                        <br>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                {% endif %}
+            {% endif %}
             
             {% if app.user %}
                 {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
