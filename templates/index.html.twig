@@ -47,7 +47,7 @@
             </div>
 
             {% if app.user %}
-                {% if app.user.roles[0] == "ROLE_LECTOR" or app.user.roles[0] == "ROLE_ADMIN" %}
+                {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
                     <div class="col-sm-3 m-3">
                         <div class="card text-center">
                             <div class="card-body">
@@ -61,7 +61,7 @@
             {% endif %}
 
             {% if app.user %}
-                {% if app.user.roles[0] == "ROLE_LECTOR" or app.user.roles[0] == "ROLE_ADMIN" %}
+                {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
                     <div class="col-sm-3 m-3">
                         <div class="card text-center">
                             <div class="card-body">
@@ -99,7 +99,21 @@
             </div>
             
             {% if app.user %}
-                {% if app.user.roles[0] == "ROLE_LECTOR" or app.user.roles[0] == "ROLE_ADMIN" %}
+                {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
+                    <div class="col-sm-3 m-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Dernières nouveautés</h5>
+                                <p class="card-text">Feuilleter le journal autrement</p>
+                                <a href="{{ path('last') }}" class="btn btn-primary">Nouveautés</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            {% if app.user %}
+                {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
                     <div class="col-sm-3 m-3">
                         <div class="card text-center">
                             <div class="card-body">
@@ -108,6 +122,14 @@
                                 <a href="{{ path('documents_index') }}" class="btn btn-warning">En images</a>
                             </div>
                         </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            {% if app.user %}
+                {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
+                    <div class="col-sm-3 m-3">
+                        
                     </div>
                 {% endif %}
             {% endif %}
