@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveautés - Le journal de Maman{% endblock %}
+
+{% block body %}
+    <main class="index">
+        <p class="text-center">
+            Derniers articles - Derniers commentaires - Dernières nouveautés
+        </p>
+
+        <div class="row justify-content-center m-3">
+        
+            <div class="col-12 col-md-6">
+                <h2>6 derniers articles</h2>
+                <ul>
+                    {% for article in lastArticles %}
+                        <li>
+                            {% set difference = date().diff(date(article.ajoutdate)) %}
+                            {% set leftDays = difference.days %}
+                            <a href="{{ path('articles_show', {'id': article.id}) }}">
+                                {{ trans_day_hash[article.jour|date('l')] }}
+                                {{ article.jour ? article.jour|date('j') : '' }}
+                                {{ trans_month_hash[article.jour|date('F')] }}
+                                {{ article.jour ? article.jour|date('Y') : '' }}
+                            </a>
+                            , ajouté par {{ article.ajouteur.firstname }} 
+                            {% if leftDays == 0 %}
+                                aujourd'hui
+                            {% elseif leftDays == 1 %}
+                                hier
+                            {% else %}
+                                il y a {{ leftDays}} jours
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="col-12 col-md-6">
+                <h2>6 derniers commentaires</h2>
+                <ul>
+                    {% for comment in lastCommentaires %}
+                        <li>
+                        {{ comment.auteurcom.firstname }}, le {{ comment.datecom |date('d/m/Y') }} : 
+                        {{ comment.com | slice(0, 50) }} ... 
+                        [<a href="{{ path('articles_show', {'id': comment.article.id}) }}#com">lire l'article</a>]
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col-12">
+                <h2>Dernières nouveautés</h2>
+                <ul>
+                    <li>
+                        21/02/2021 : il n'est plus possible d'ajouter des PDF à une page du journal, les photos étant plus visuelles.
+                    </li>
+                    <li>
+                        21/02/2021 : il n'est plus possible d'ajouter une page de journal dont la date existe déjà.
+                    </li>
+                    <li>
+                        21/02/2021 : celui qui ajoute une page peut désormais la supprimer, en cas d'erreur ou de doublon.
+                    </li>
+                    <li>
+                        16/02/2021 : Ajout d'une page avec les miniatures pour voir les images de tous les journaux.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

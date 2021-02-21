@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Articles;
 use App\Entity\Journaux;
 use App\Entity\Documents;
+use App\Repository\ArticlesRepository;
+use App\Repository\CommentairesRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -54,6 +56,21 @@ class HomeController extends AbstractController
             'totalContribs' => $totalContribs,
             'totalDocs' => $totalDocs,
             'contribs' => $contribs,
+        ]);
+    }
+
+    /**
+     * @Route("/last", name="last")
+     * @return Response
+     */
+    public function last(ArticlesRepository $articlesRepository, CommentairesRepository $commentairesRepository) :Response
+    {
+        $lastArticles = $articlesRepository->findBy([], ['id' => 'DESC'] , 6, 0);
+        $lastCommentaires = $commentairesRepository->findBy([], ['id' => 'DESC'] , 6, 0);
+
+        return $this->render('last.html.twig', [
+            'lastCommentaires' => $lastCommentaires,
+            'lastArticles' => $lastArticles,
         ]);
     }
 }
