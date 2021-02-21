@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter un document ou une photo{% endblock %}
+{% block title %}Ajouter une photo{% endblock %}
 
 {% block body %}
     <main class="article p-3">
@@ -19,9 +19,7 @@
                     {{ include('documents/_form.html.twig') }}
 
                 <p>
-                Formats acceptés (<10Mo) :<br>
-                - images : jpg, jpeg, png<br>
-                - documents : PDF</p>
+                Formats acceptés : jpg, jpeg, png (<10Mo)<br>
             </div>
         </div>
     </main>

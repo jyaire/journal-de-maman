@@ -62,7 +62,7 @@ class DocumentsController extends AbstractController
                         'form' => $form->createView(),
                     ]);
                 }
-                if ($extension == 'jpg' or $extension == 'jpeg' or $extension == 'png' or $extension == 'pdf') {
+                if ($extension == 'jpg' or $extension == 'jpeg' or $extension == 'png') {
                     $uniqId = uniqid();
                     $fileName = 'journal-' . $article->getId() . '-' . date('YmdHis') . '-' . $uniqId . '.' . $extension;
                     try {
@@ -80,7 +80,7 @@ class DocumentsController extends AbstractController
                     $entityManager->persist($document);
                 }
                 else {
-                    $message = "Echec ! Tous les documents doivent être au format jpg, jpeg, png ou PDF";
+                    $message = "Echec ! Les images doivent être au format jpg, jpeg ou png";
                     $this->addFlash('danger', $message);
                     return $this->render('documents/new.html.twig', [
                         'article' => $article,
