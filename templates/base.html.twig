@@ -18,23 +18,22 @@
                 <img src="{{ asset('images/fleur-de-lys.png') }}" title="Fleur de Lys" style="height: 30px;">
 
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav">
-                        <a href="{{ path('journaux_index') }}" class="pl-5 nav-item nav-link active">Les journaux</a>
-                        <a href="{{ path('articles_index') }}" class="pl-5 nav-item nav-link active">Au jour le jour</a>
-                    </div>
                     <div class="navbar-nav ml-auto">
+                        <a href="{{ path('journaux_index') }}" class="pr-5 pl-5 nav-item nav-link active">Les journaux</a>
+                        <a href="{{ path('articles_index') }}" class="pr-5 nav-item nav-link active">Au jour le jour</a>
                         {% if app.user %}
-                            {% if app.user.roles[0] == "ROLE_LECTOR" or app.user.roles[0] == "ROLE_ADMIN" %}
-                            <a href="{{ path('articles_new') }}" class="pr-5 nav-item nav-link active">Ajouter du contenu</a>
+                            {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('documents_index') }}" class="pr-5 nav-item nav-link active">En images</a>
+                                <a href="{{ path('articles_new') }}" class="pr-5 nav-item nav-link active">Ajouter du contenu</a>
                             {% endif %}
-                            {% if app.user.roles[0] == "ROLE_ADMIN" %}
+                            {% if is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('admin_index') }}" class="pr-5 nav-item nav-link active">admin</a>
                             {% endif %}
-                            <a href="{{ path('user_show', {id: app.user.id}) }}" class="pr-5 nav-item nav-link active">Bienvenue {{ app.user.firstname }}</a>
-                            {% if app.user.roles[0] == "ROLE_LECTOR" or app.user.roles[0] == "ROLE_ADMIN" %}
-                            <a href="{{ path('search') }}" class="pl-5 nav-item nav-link active">
-                                <img src="{{ asset('images/loupe.png') }}" title="Recherche" style="height: 25px;">
-                            </a>
+                            <a href="{{ path('user_show', {id: app.user.id}) }}" class="pr-5 nav-item nav-link active">{{ app.user.firstname }}</a>
+                            {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('search') }}" class="nav-item nav-link active">
+                                    <img src="{{ asset('images/loupe.png') }}" title="Recherche" style="height: 25px;">
+                                </a>
                             {% endif %}
                         {% else %}
                             <a href="{{ path('app_login') }}" class="nav-item nav-link active">Se connecter</a>
@@ -54,7 +53,7 @@
             </div>
         {% endfor %}
         {% if app.user %}
-            {% if app.user.roles[0] == 'ROLE_USER' %}
+            {% if not is_granted('ROLE_LECTOR') %}
                 <div class="alert alert-danger text-center">
                     Votre compte est en attente de validation, vous ne pouvez pas encore lire le journal...<br>
                     Un mail vous préviendra de l'activation de votre compte.
