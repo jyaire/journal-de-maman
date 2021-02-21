@@ -62,14 +62,18 @@
             </div>
             <div class="col-5 lead">
                 {% for like in likes %}
-                <p>
-                    <a href="{{ path('articles_show', {'id': like.article.id}) }}">
-                    {{ trans_day_hash[like.article.jour|date('l')] }}
-                    {{ like.article.jour ? like.article.jour|date('j') : '' }}
-                    {{ trans_month_hash[like.article.jour|date('F')] }}
-                    {{ like.article.jour ? like.article.jour|date('Y') : '' }}
-                    </a>
-                </p>
+                    <p>
+                        <a href="{{ path('articles_show', {'id': like.article.id}) }}">
+                        {{ trans_day_hash[like.article.jour|date('l')] }}
+                        {{ like.article.jour ? like.article.jour|date('j') : '' }}
+                        {{ trans_month_hash[like.article.jour|date('F')] }}
+                        {{ like.article.jour ? like.article.jour|date('Y') : '' }}
+                        </a>
+                    </p>
+                {% else %}
+                    <p>
+                        Aucune page actuellement, cliquez sur le coeur en bas des pages du journal que vous voulez voir apparaître ici.
+                    </p>
                 {% endfor %}
             </div>
         </div>
