@@ -6,7 +6,6 @@
     <main class="journal journaux">
         <h1 class="p-3">Les journaux en ligne</h1>
         <div class="bureau">
-            {% set n = 1 %}
             {% for journaux in journauxes %}
                 <a href="{{ path('journaux_show', {id: journaux.id}) }}" title="{{ journaux.titre }}">
                 {% if journaux.couleur == null %}

@@ -8,8 +8,18 @@
             <div class="row justify-content-center">
                 <div class="col-md-2">
                     <a href="{{ path('journaux_show', {'id': article.journal.id}) }}">
-                        <img src="{{ asset('images/retour-sommaire.png') }}" alt="Sommaire de ce journal" class="icon-nav-sommaire" />
-                    </a><br>
+                        {% if article.journal.couleur == null %}
+                            <img src="{{ asset('images/retour-carnet-noir.png') }}" title="Sommaire du journal" alt="Sommaire de ce journal" class="icon-nav-sommaire" />
+                        {% elseif article.journal.couleur == "vert" %}
+                           <img src="{{ asset('images/retour-carnet-vert.png') }}" title="Sommaire du journal" alt="Sommaire de ce journal" class="icon-nav-sommaire" />
+                         {% elseif article.journal.couleur == "rouge" %}
+                           <img src="{{ asset('images/retour-carnet-rouge.png') }}" title="Sommaire du journal" alt="Sommaire de ce journal" class="icon-nav-sommaire" />
+                         {% elseif article.journal.couleur == "bleu" %}
+                           <img src="{{ asset('images/retour-carnet-bleu.png') }}" title="Sommaire du journal" alt="Sommaire de ce journal" class="icon-nav-sommaire" />
+                         {% else  %}
+                           <img src="{{ asset('images/retour-carnet-noir.png') }}" title="Sommaire du journal" alt="Sommaire de ce journal" class="icon-nav-sommaire" />
+                        {% endif %}
+                    </a>
                     <img src="{{ asset('images/encrier.png') }}" alt="Encrier" id="encrier" />
                 </div>
                 <div class="col-md-8 col-sm-12 fond-paper">

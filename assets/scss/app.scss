@@ -182,7 +182,7 @@ body {
         position: relative;
         width: 200px;
         margin-left: -60px;
-        padding-top: 70px;
+        padding-top: 170px;
         padding-right: 5px;
     }
 
@@ -194,9 +194,11 @@ body {
 
     .icon-nav-sommaire {
         position: absolute;
-        height: 30px;
+        height: 80px;
         top: 10px;
-        right: 10px;
+        right: 50px;
+        z-index: 5;
+        box-shadow: 8px 8px 12px #aaa;
     }
 
     .icon-nav-gauche {
