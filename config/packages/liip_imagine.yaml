@@ -9,6 +9,12 @@ liip_imagine:
                 thumbnail: # Filtre "Thumbnail"
                     size: [200, 200] # Taille de l'image de sortie
                     mode: outbound # Découpage de l'image
+        smallsquare:
+            quality: 75
+            filters:
+                thumbnail:
+                    size: [100, 100]
+                    mode: outbound
         reduc:
             quality: 85
             filters:

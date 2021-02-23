@@ -8,7 +8,7 @@
         <div class="row justify-content-center m-3">
         
             <div class="col-12 col-md-6">
-                <h2>6 derniers articles</h2>
+                <h2>10 dernières pages</h2>
                 <ul>
                     {% for article in lastArticles %}
                         <li>
@@ -34,7 +34,7 @@
             </div>
             
             <div class="col-12 col-md-6">
-                <h2>6 derniers commentaires</h2>
+                <h2>4 derniers commentaires</h2>
                 <ul>
                     {% for comment in lastCommentaires %}
                         <li>
@@ -42,6 +42,14 @@
                         {{ comment.com | slice(0, 50) }} ... 
                         [<a href="{{ path('articles_show', {'id': comment.article.id}) }}#com">lire l'article</a>]
                         </li>
+                    {% endfor %}
+                </ul>
+                <h2>4 derniers documents</h2>
+                <ul>
+                    {% for document in lastDocuments %}
+                        <a href="{{ path('documents_show', {'id': document.id}) }}">
+                            <img src="{{ asset('documents/' ~ document.file) |imagine_filter('smallsquare') }}" alt="Document du journal" class="small-miniature" />
+                        </a>
                     {% endfor %}
                 </ul>
             </div>

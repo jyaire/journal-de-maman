@@ -7,6 +7,7 @@ use App\Entity\Journaux;
 use App\Entity\Documents;
 use App\Repository\ArticlesRepository;
 use App\Repository\CommentairesRepository;
+use App\Repository\DocumentsRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -63,14 +64,16 @@ class HomeController extends AbstractController
      * @Route("/last", name="last")
      * @return Response
      */
-    public function last(ArticlesRepository $articlesRepository, CommentairesRepository $commentairesRepository) :Response
+    public function last(ArticlesRepository $articlesRepository, CommentairesRepository $commentairesRepository, DocumentsRepository $documentsRepository) :Response
     {
-        $lastArticles = $articlesRepository->findBy([], ['id' => 'DESC'] , 6, 0);
-        $lastCommentaires = $commentairesRepository->findBy([], ['id' => 'DESC'] , 6, 0);
+        $lastArticles = $articlesRepository->findBy([], ['id' => 'DESC'] , 10, 0);
+        $lastCommentaires = $commentairesRepository->findBy([], ['id' => 'DESC'] , 4, 0);
+        $lastDocuments = $documentsRepository->findBy([], ['id' => 'DESC'] , 4, 0);
 
         return $this->render('last.html.twig', [
-            'lastCommentaires' => $lastCommentaires,
             'lastArticles' => $lastArticles,
+            'lastCommentaires' => $lastCommentaires,
+            'lastDocuments' => $lastDocuments,
         ]);
     }
 }
