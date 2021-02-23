@@ -68,7 +68,7 @@ class HomeController extends AbstractController
     {
         $lastArticles = $articlesRepository->findBy([], ['id' => 'DESC'] , 10, 0);
         $lastCommentaires = $commentairesRepository->findBy([], ['id' => 'DESC'] , 4, 0);
-        $lastDocuments = $documentsRepository->findBy([], ['id' => 'DESC'] , 4, 0);
+        $lastDocuments = $documentsRepository->findBy([], ['id' => 'DESC'] , 6, 0);
 
         return $this->render('last.html.twig', [
             'lastArticles' => $lastArticles,
