@@ -14,6 +14,7 @@ use Doctrine\ORM\NoResultException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class HomeController extends AbstractController
 {
@@ -62,6 +63,7 @@ class HomeController extends AbstractController
 
     /**
      * @Route("/last", name="last")
+     * @IsGranted("ROLE_LECTOR")
      * @return Response
      */
     public function last(ArticlesRepository $articlesRepository, CommentairesRepository $commentairesRepository, DocumentsRepository $documentsRepository) :Response
