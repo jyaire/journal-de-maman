@@ -3,9 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Articles;
-use App\Entity\Journaux;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;;
 
 /**
  * @method Articles|null find($id, $lockMode = null, $lockVersion = null)
