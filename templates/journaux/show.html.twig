@@ -15,13 +15,11 @@
             </div>
             <div class="col-3 p-3 text-right">
                 {% if app.user %}
-                    {% for role in app.user.roles %}
-                        {% if role == 'ROLE_LECTOR' %}
-                            <a href="{{ path('journal_pdf', {id:journal.id}) }}" alt="Télécharger ce journal" class="btn btn-warning m-2">
-                                Télécharger ce journal en PDF
-                            </a>
-                        {% endif %}
-                    {% endfor %}
+                    {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('journal_pdf', {id:journal.id}) }}" alt="Télécharger ce journal" class="btn btn-warning m-2">
+                            Télécharger ce journal en PDF
+                        </a>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
