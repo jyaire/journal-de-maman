@@ -24,7 +24,7 @@
                         {% if app.user %}
                             {% if is_granted('ROLE_LECTOR') or is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('documents_index') }}" class="pr-5 nav-item nav-link active">En images</a>
-                                <a href="{{ path('articles_new') }}" class="pr-5 nav-item nav-link active">Ajouter du contenu</a>
+                                <a href="{{ path('last') }}" class="pr-5 nav-item nav-link active">Nouveautés</a>
                             {% endif %}
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('admin_index') }}" class="pr-5 nav-item nav-link active">admin</a>

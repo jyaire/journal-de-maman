@@ -108,6 +108,18 @@ body {
 
 .journal {
 
+    .journal-stat {
+        border-radius: 5px;
+        background-color: white;
+        margin-top: 2px;
+        padding: 6px;
+        text-align: center;
+        font-size: 1.1rem;
+        .red-number {
+            color: red;
+         }
+    }
+
     a {
         text-decoration: none;
         color: inherit;
