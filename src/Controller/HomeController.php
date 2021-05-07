@@ -78,4 +78,14 @@ class HomeController extends AbstractController
             'lastDocuments' => $lastDocuments,
         ]);
     }
+
+    /**
+     * @Route("/tuto", name="tuto")
+     * @IsGranted("ROLE_LECTOR")
+     * @return Response
+     */
+    public function tuto(ArticlesRepository $articlesRepository, CommentairesRepository $commentairesRepository, DocumentsRepository $documentsRepository) :Response
+    {
+        return $this->render('tuto.html.twig');
+    }
 }
