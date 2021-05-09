@@ -13,10 +13,17 @@
                 {% else %}
                     <div class="carnet-{{ journaux.couleur }} text-center p-1 pt-3 m-4">
                 {% endif %}
-                    <p>JOURNAL<br>
-                        {{ journaux.titre }}</p><br>
-                    <p>du {{ journaux.datedebut ? journaux.datedebut|date('d/m/Y') : '' }}<br>
-                        au {{ journaux.datefin ? journaux.datefin|date('d/m/Y') : '' }}</p>
+                    <span>
+                        JOURNAL<br>
+                        {{ journaux.titre }}
+                    </span><br><br>
+                    <span class="journal-stat text-center m-2 text-dark">
+                        <span class="red-number">
+                            {{ journaux.articles | length }}
+                        </span> pages
+                    </span><br>
+                    <span>du {{ journaux.datedebut ? journaux.datedebut|date('d/m/Y') : '' }}<br>
+                        au {{ journaux.datefin ? journaux.datefin|date('d/m/Y') : '' }}</span>
                 </div>
                 </a>
             {% endfor %}
