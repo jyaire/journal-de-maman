@@ -4,7 +4,18 @@
 
 {% block body %}
     <div class="col-12">
-    <h1 class="m-3">Les documents en ligne</h1>
+    <div class="row journal">
+            <div class="col-6">
+                <h1 class="p-3">Les documents en ligne</h1>
+            </div>
+            <div class="col-6 mt-4 text-right">
+                <span class="journal-stat text-center m-2 mr-5 text-dark">
+                    <span class="red-number">
+                        {{ documents | length }}
+                    </span> documents au total
+                </span>
+            </div>
+        </div>
         <div class="row justify-content-left m-2">
     
             {% for document in documents | sort((a, b) => a.article.jour <=> b.article.jour) %}
