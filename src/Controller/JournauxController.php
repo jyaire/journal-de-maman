@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Journaux;
 use App\Form\JournauxType;
+use App\Repository\ArticlesRepository;
 use App\Repository\JournauxRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,10 +22,11 @@ class JournauxController extends AbstractController
     /**
      * @Route("/", name="journaux_index", methods={"GET"})
      */
-    public function index(JournauxRepository $journauxRepository): Response
+    public function index(JournauxRepository $journauxRepository, ArticlesRepository $articlesRepository): Response
     {
         return $this->render('journaux/index.html.twig', [
             'journauxes' => $journauxRepository->findBy([], ['datedebut' => 'ASC']),
+            'totalarticles' => count($articlesRepository->findAll()),
         ]);
     }
 
