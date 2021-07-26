@@ -95,6 +95,7 @@ class ArticlesController extends AbstractController
 
             return $this->redirectToRoute('journaux_show', [
                 'id' => $journal->getId(),
+                '_fragment' => $article->getId(),
             ]);
         }
 
