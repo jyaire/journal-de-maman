@@ -5448,13 +5448,11 @@ fsevents@~2.1.2:
   linkType: hard
 
 "json5@npm:^2.1.2":
-  version: 2.1.3
-  resolution: "json5@npm:2.1.3"
-  dependencies:
-    minimist: ^1.2.5
+  version: 2.2.3
+  resolution: "json5@npm:2.2.3"
   bin:
     json5: lib/cli.js
-  checksum: 957e4937106cf59975aa0281e68911534d65c8a25be5b4d3559aa55eba351ccab516a943a60ba33e461e4b8af749939986e311de910cbcfd197410b57d971741
+  checksum: c6ab786b232e576477f63d9b672ee4b546a181ac732e8cba0603e3e7352ac1fe9287344af1132c76c71613b5f69ce4f9b92ec41a10f51030ab764e015087932a
   languageName: node
   linkType: hard
 
